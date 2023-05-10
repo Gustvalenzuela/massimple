@@ -1,0 +1,284 @@
+.tamano {
+    width: 100%;
+    max-width: 120px;
+
+}
+
+.carrito_compra_logo {
+    margin-left: 5%;
+}
+
+body {
+    background-color: #efebe4;
+}
+
+input[type=text] {
+    width: 100%;
+
+    box-sizing: border-box;
+    border: 2px solid #918686;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Vector_search_icon.svg/20px-Vector_search_icon.svg.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 7px 20px 7px 40px;
+}
+.tamMedium {
+    width: 100%;
+    max-width: 355px;
+}
+
+.tam {
+    width: 100%;
+    max-width: 320px;
+}
+
+.dropbtn {
+    background-color: #236ccd;
+    color: rgb(255, 255, 255);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ee8d8d;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: rgb(255, 249, 249);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #EDBE19
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #236ccd;
+}
+
+.footer {
+    background-color: rgb(43, 41, 41);
+    ;
+    padding: 20px;
+    color: aliceblue;
+}
+
+.cate:link,
+.cate:visited {
+    background-color: #236ccd;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 6px;
+    margin-top: 5px;
+
+}
+
+.cate:hover,
+.cate:active {
+    background-color: #EDBE19;
+}
+
+.cajas {
+    color: rgb(0, 0, 0);
+    width: 200px;
+    border: 9px solid rgb(198, 235, 198);
+    padding: 20px;
+    margin: 20px;
+
+}
+
+.letragris {
+    color: #837d7d;
+}
+
+.container-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+
+.item {
+    margin: 10px;
+    padding: 2px 9px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.20);
+    background-color: rgb(255, 255, 255);
+
+}
+
+.item:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.20);
+}
+
+.boton-add {
+    border-radius: 8px;
+    padding: 10px 10px;
+
+}
+
+.boton-add:hover {
+    background-color: #236ccd;
+    color: #efebe4;
+
+}
+
+.detail {
+    margin: 20px;
+    padding: 23px 70px;
+    border-radius: 16px;
+
+
+    background-color: #ffffff;
+
+}
+
+.marginproducto {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 80px;
+
+
+}
+
+.imgProduc {
+    width: 100%;
+    max-width: 380px;
+    float: left;
+
+
+}
+
+.tamanocarrito {
+    margin-right: 20px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+    width: 100%;
+    max-width: 45px;
+}
+
+.carritoproducto {
+    color: #da0808;
+
+}
+
+@media only screen and (max-width: 575px) {
+    .carrito_compra_logo {
+        margin-left: 0%;
+    }
+}
+
+.div {
+    width: 50px;
+}
+.tamanioImgPrinci{
+    width: 100%;
+    max-width: 700px;
+}
+
+
+
+.carrito {
+    margin: 10px;
+    padding: 2px 9px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.20);
+    background-color: rgb(255, 255, 255);
+}
+
+.tamcarrito {
+    width: 100%;
+    max-width: 150px;
+}
+
+.tabla {
+    margin-bottom: 50px;
+}
+.boton-add2 {
+    border-radius: 8px;
+    padding: 10px 10px;
+    
+
+}
+
+.boton-add2:hover {
+    background-color: #dc1c1c;
+    color: #ffffff;
+
+}
+.tamanoPerfil{
+    width: 100%;
+    max-width: 900px;
+}
+
+.itemadd {
+    margin: 10px;
+    padding: 32px 57px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.20);
+    background-color: rgb(255, 255, 255);
+
+}
+
+.edit {
+    width: 100%;
+    max-width: 40px;
+}
+
+.tamimgadm {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+
+}
+
+
+.lindatabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  td:nth-child(3) {
+    text-align: right;
+  }
+  
+  td:nth-child(4) button {
+    margin-right: 5px;
+  }
+.imglistado{
+    width: 100%;
+    max-width: 100px;
+}
