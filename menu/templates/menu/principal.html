@@ -95,7 +95,7 @@
                 <img class="tam" src="img/quimicos.png" alt="Sin imagen">
                 <br>
                 <br>
-                <a class="cate" href="detergentes.html" target="_blank">
+                <a class="cate" href="{% url 'detergentes' %}" >
                     <h6> Detergentes</h6>
                 </a>
             </div>
@@ -181,6 +181,7 @@
         crossorigin="anonymous"></script>
 
     <script src="{% static 'menu/js/jquery.js' %}"></script>
+    <a href="{% url 'detergentes' %}"> ir a detergentes</a>
 </body>
 
 </html>
