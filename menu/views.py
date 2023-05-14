@@ -7,3 +7,6 @@ def principal (request):
 
 def detergentes(request):
     return render(request,'menu/detergentes.html')
+
+def productos(request):
+    return render(request, 'menu/productos.html')
