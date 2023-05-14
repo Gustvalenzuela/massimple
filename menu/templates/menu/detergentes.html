@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    {%load static%}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,14 +10,14 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link type="text/css" rel="stylesheet" href="css/estilos.css">
+    <link type="text/css" rel="stylesheet" href="{% static 'menu/css/estilos.css' %}">
 </head>
 
 <body>
 
     <nav class="navbar navbar-expand-sm" style="background-color: #236ccd;--bs-navbar-padding-y: -0.9rem;">
         <div class="container-fluid">
-            <a href="principal.html" class="navbar-brand"><img class="tamano" src="img/logo2.png" alt="Sin imagen"></a>
+            <a href="principal.html" class="navbar-brand"><img class="tamano" src="{%static 'menu/img/logo2.png '%}" alt="Sin imagen"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -50,11 +51,11 @@
                 </form>
 
                 <div class="d-flex carrito_compra_logo">
-                    <a href="login.html"><img class="tamanocarrito" src="img/logoperfil3.png" alt="Sin imagen"></a>
+                    <a href="login.html"><img class="tamanocarrito" src="{% static 'menu/img/logoperfil3.png '%}" alt="Sin imagen"></a>
                 </div>
 
                 <div class="d-flex carrito_compra_logo">
-                    <a href="Carrito.html"><img class="tamanocarrito" src="img/Carrito2.png" alt="Sin imagen"></a>
+                    <a href="Carrito.html"><img class="tamanocarrito" src="{% static 'menu/img/Carrito2.png '%}" alt="Sin imagen"></a>
                 </div>
             </div>
         </div>
@@ -78,7 +79,7 @@
                 <div class="container-items">
                     <div class="item">
 
-                        <img class="tam" src="img/massismple2.jpeg" alt="Sin imagen">
+                        <img class="tam" src="{%static 'menu/img/massismple2.jpeg ' %}" alt="Sin imagen">
                         <h5>Detergente Mas simple</h5>
                         <p class="price"> $2.100</p>
                         <a href="DetalleMasimple.html"><button class="boton-add">Ver más </button> </a>
@@ -96,7 +97,7 @@
                 <div class="container-items">
                     <div class="item">
 
-                        <img class="tam" src="img/omodeter.jpg" alt="Sin imagen">
+                        <img class="tam" src=" {%static 'menu/img/omodeter.jpg ' %}" alt="Sin imagen">
                         <h5>Detergente Omo</h5>
                         <p class="price"> $2.500</p>
                         <a href="detalleOmo.html"><button class="boton-add">Ver más</button> </a>
@@ -113,7 +114,7 @@
                 <div class="container-items">
                     <div class="item">
 
-                        <img class="tam" src="img/acedeter.jpg" alt="Sin imagen">
+                        <img class="tam" src="{%static 'menu/img/acedeter.jpg ' %}" alt="Sin imagen">
                         <h5>Detergente Ace</h5>
                         <p class="price"> $2.000</p>
                         <a href="detalleAce.html"><button class="boton-add">Ver más </button> </a>
@@ -129,7 +130,7 @@
                 <div class="container-items">
                     <div class="item">
 
-                        <img class="tam" src="img/drivedeter.jpg" alt="Sin imagen">
+                        <img class="tam" src="{%static 'menu/img/drivedeter.jpg ' %}" alt="Sin imagen">
                         <h5>Detergente Drive</h5>
                         <p class="price"> $2.000</p>
                         <a href="detalleDrive.html"><button class="boton-add">Ver más </button> </a>
@@ -149,7 +150,7 @@
             <div class="col-md-3">
                 <div class="container-items">
                     <div class="item">
-                        <img class="tam" src="img/arieldeter.jpg" alt="sin imagen">
+                        <img class="tam" src="{%static 'menu/img/arieldeter.jpg ' %}" alt="sin imagen">
                         <h5> Detergente Ariel</h5>
                         <p class="price">$2.500</p>
                         <a href="detalleAriel.html"><button class="boton-add"> Ver más</button></a>
@@ -160,7 +161,7 @@
             <div class="col-md-3">
                 <div class="container-items">
                     <div class="item">
-                        <img class="tam" src="img/gabrieldeter.jpg" alt="sin imagen">
+                        <img class="tam" src="{%static 'menu/img/gabrieldeter.jpg ' %}" alt="sin imagen">
                         <h5> Detergente Gabriel</h5>
                         <p class="price">$2.500</p>
                         <a href="detalleGabri.html"><button class="boton-add"> Ver más</button></a>
@@ -170,7 +171,7 @@
             <div class="col-md-3">
                 <div class="container-items">
                     <div class="item">
-                        <img class="tam" src="img/fuzoldeter.jpg" alt="sin imagen">
+                        <img class="tam" src="{%static 'menu/img/fuzoldeter.jpg ' %}" alt="sin imagen">
                         <h5> Detergente Fuzol</h5>
                         <p class="price">$1.850</p>
                         <a href="detalleFuz.html"><button class="boton-add"> Ver más</button></a>
@@ -180,7 +181,7 @@
             <div class="col-md-3">
                 <div class="container-items">
                     <div class="item">
-                        <img class="tam" src="img/deterIgen.jpg" alt="sin imagen">
+                        <img class="tam" src="{%static 'menu/img/deterIgen.jpg ' %}" alt="sin imagen">
                         <h5> Detergente Igenix</h5>
                         <p class="price">$1.900</p>
                         <a href="detalleIge.html"><button class="boton-add"> Ver más</button></a>

@@ -60,11 +60,11 @@
                 </form>
 
                 <div class="d-flex carrito_compra_logo">
-                    <a href="login.html"><img class="tamanocarrito" src="img/logoperfil3.png" alt="Sin imagen"></a>
+                    <a href="login.html"><img class="tamanocarrito" src="{%static 'menu/img/logoperfil3.png '%}" alt="Sin imagen"></a>
                 </div>
 
                 <div class="d-flex carrito_compra_logo">
-                    <a href="Carrito.html"><img class="tamanocarrito" src="img/Carrito2.png" alt="Sin imagen"></a>
+                    <a href="Carrito.html"><img class="tamanocarrito" src="{%static 'menu/img/Carrito2.png '%}" alt="Sin imagen"></a>
                 </div>
             </div>
         </div>
@@ -83,7 +83,7 @@
         <br>
         <div class="row" style="background-color: #E5E1D5;">
             <div class="col-md-4 col-sm-12" style="text-align: center;">
-                <img class="tam" src="img/balde2.png" alt="Sin imagen">
+                <img class="tam" src="{% static 'menu/img/balde2.png' %}" alt="Sin imagen">
                 <br>
                 <br>
                 <a class="cate" href="productos.html" target="_blank">
@@ -92,7 +92,7 @@
 
             </div>
             <div class="col-md-4 col-sm-12" style="text-align: center;">
-                <img class="tam" src="img/quimicos.png" alt="Sin imagen">
+                <img class="tam" src="{% static 'menu/img/quimicos.png'%}" alt="Sin imagen">
                 <br>
                 <br>
                 <a class="cate" href="{% url 'detergentes' %}" >
@@ -100,7 +100,7 @@
                 </a>
             </div>
             <div class="col-md-4 col-sm-12" style="text-align: center;">
-                <img class="tamMedium" src="img/productos-de-aseo.jpg" alt="Sin imagen">
+                <img class="tamMedium" src="{% static 'menu/img/productos-de-aseo.jpg'%}" alt="Sin imagen">
                 <br>
                 <br>
                 <a class="cate" href="proteccion.html" target="_blank">
@@ -115,7 +115,7 @@
         <div class="row">
             <div class="col-md-3 col-sm-12"></div>
             <div class="col-md-6 col-sm-12" style="text-align: center;">
-                <img class="tamanioImgPrinci" src="img/compra_online.png" alt="Sin imagen">
+                <img class="tamanioImgPrinci" src="{%static 'menu/img/compra_online.png '%}" alt="Sin imagen">
             </div>
             <div class="col-md-3 col-sm-12" style="text-align: center" ;> </div>
 
