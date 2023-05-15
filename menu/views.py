@@ -10,3 +10,9 @@ def detergentes(request):
 
 def productos(request):
     return render(request, 'menu/productos.html')
+
+def proteccion(request):
+    return render(request, 'menu/proteccion.html')
+
+def login(request):
+    return render(request, 'menu/login.html')
