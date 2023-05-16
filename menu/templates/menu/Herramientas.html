@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+{%load static%}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,14 +9,14 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link type="text/css" rel="stylesheet" href="css/estilos.css">
+    <link type="text/css" rel="stylesheet" href="{% static 'menu/css/estilos.css' %}">
 </head>
 
 <body>
 
     <nav class="navbar navbar-expand-sm" style="background-color: #236ccd;--bs-navbar-padding-y: -0.9rem;">
         <div class="container-fluid">
-            <a href="principal.html" class="navbar-brand"><img class="tamano" src="img/logo2.png" alt="Sin imagen"></a>
+            <a href="principal.html" class="navbar-brand"><img class="tamano" src="{% static 'menu/img/logo2.png' %}" alt="Sin imagen"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -50,11 +50,11 @@
                 </form>
 
                 <div class="d-flex carrito_compra_logo">
-                    <a href="login.html"><img class="tamanocarrito" src="img/logoperfil3.png" alt="Sin imagen"></a>
+                    <a href="login.html"><img class="tamanocarrito" src="{% static 'menu/img/logoperfil3.png' %}" alt="Sin imagen"></a>
                 </div>
 
                 <div class="d-flex carrito_compra_logo">
-                    <a href="Carrito.html"><img class="tamanocarrito" src="img/Carrito2.png" alt="Sin imagen"></a>
+                    <a href="Carrito.html"><img class="tamanocarrito" src="{% static 'menu/img/Carrito2.png' %}" alt="Sin imagen"></a>
                 </div>
             </div>
         </div>
@@ -80,7 +80,7 @@
                 <div class="container-items">
                     <div class="item">
 
-                        <img class="tam" src="img/escoba.png" alt="Sin imagen">
+                        <img class="tam" src="{% static 'menu/img/escoba.png' %}" alt="Sin imagen">
                         <h5>Escobillón Básico Multiuso</h5>
                         <p class="price"> $1.690</p>
                         <a href="D.herra1.html"><button class="boton-add">Ver más </button> </a>
@@ -98,7 +98,7 @@
                 <div class="container-items">
                     <div class="item">
 
-                        <img class="tam" src="img/esponja.jpg" alt="Sin imagen">
+                        <img class="tam" src="{% static 'menu/img/esponja.jpg' %}" alt="Sin imagen">
                         <h5>Esponja Económica Multiuso </h5>
                         <p class="price"> $1.000</p>
                         <a href="D.herra2.html"><button class="boton-add">Ver más </button> </a>
@@ -115,7 +115,7 @@
                 <div class="container-items">
                     <div class="item">
 
-                        <img class="tam" src="img/cepilloBaño.jpg" alt="Sin imagen">
+                        <img class="tam" src="{% static 'menu/img/cepilloBaño.jpg' %}" alt="Sin imagen">
                         <h5>Cepillo De Baño </h5>
                         <p class="price"> $3.300</p>
                         <a href="D.herra3.html"><button class="boton-add">Ver más </button> </a>
@@ -131,7 +131,7 @@
                 <div class="container-items">
                     <div class="item">
 
-                        <img class="tam" src="img/Mopa.webp" alt="Sin imagen">
+                        <img class="tam" src="{% static 'menu/img/Mopa.webp' %}" alt="Sin imagen">
                         <h5>Mopa </h5>
                         <p class="price"> $7.500</p>
                         <a href="D.herra4.html"><button class="boton-add">Ver más </button> </a>
@@ -152,7 +152,7 @@
                 <div class="container-items">
                     <div class="item">
 
-                        <img class="tam" src="img/Cubeta1.webp" alt="Sin imagen">
+                        <img class="tam" src="{% static 'menu/img/Cubeta1.webp' %}" alt="Sin imagen">
                         <h5>Cubeta Azul</h5>
                         <p class="price"> $1.990</p>
                         <a href="D.herra5.html"><button class="boton-add">Ver más </button> </a>
@@ -170,7 +170,7 @@
                 <div class="container-items">
                     <div class="item">
 
-                        <img class="tam" src="img/limpiavidrios.webp" alt="Sin imagen">
+                        <img class="tam" src="{% static 'menu/img/limpiavidrios.webp' %}" alt="Sin imagen">
                         <h5>Limpia Vidrios </h5>
                         <p class="price"> $4.500</p>
                         <a href="D.herra6.html"><button class="boton-add">Ver más </button> </a>
@@ -187,7 +187,7 @@
                 <div class="container-items">
                     <div class="item">
 
-                        <img class="tam" src="img/pala-negra.png" alt="Sin imagen">
+                        <img class="tam" src="{% static 'menu/img/pala-negra.png' %}" alt="Sin imagen">
                         <h5>Pala Plástica Económica </h5>
                         <p class="price"> $1.300</p>
                         <a href="D.herra7.html"><button class="boton-add">Ver más </button> </a>
@@ -205,7 +205,7 @@
                 <div class="container-items">
                     <div class="item">
 
-                        <img class="tam" src="img/paño.webp" alt="Sin imagen">
+                        <img class="tam" src="{% static 'menu/img/paño.webp' %}" alt="Sin imagen">
                         <h5>Paño De Género </h5>
                         <p class="price"> $900</p>
                         <a href="D.herra8.html"><button class="boton-add">Ver más </button> </a>

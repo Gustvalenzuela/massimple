@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+{%load static%}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,14 +24,14 @@
 
 
 
-    <link type="text/css" rel="stylesheet" href="css/estilos.css">
+    <link type="text/css" rel="stylesheet" href="{% static 'menu/css/estilos.css' %}">
 </head>
 
 <body>
 
     <nav class="navbar navbar-expand-sm" style="background-color: #236ccd;--bs-navbar-padding-y: -0.9rem;">
         <div class="container-fluid">
-            <a href="principal.html" class="navbar-brand"><img class="tamano" src="img/logo2.png" alt="Sin imagen"></a>
+            <a href="principal.html" class="navbar-brand"><img class="tamano" src="{% static 'menu/img/logo2.png' %}" alt="Sin imagen"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -65,11 +65,11 @@
                 </form>
 
                 <div class="d-flex carrito_compra_logo">
-                    <a href="login.html"><img class="tamanocarrito" src="img/logoperfil3.png" alt="Sin imagen"></a>
+                    <a href="login.html"><img class="tamanocarrito" src="{% static 'menu/img/logoperfil3.png' %}" alt="Sin imagen"></a>
                 </div>
 
                 <div class="d-flex carrito_compra_logo">
-                    <a href="Carrito.html"><img class="tamanocarrito" src="img/Carrito2.png" alt="Sin imagen"></a>
+                    <a href="Carrito.html"><img class="tamanocarrito" src="{% static 'menu/img/Carrito2.png' %}" alt="Sin imagen"></a>
                 </div>
             </div>
         </div>
