@@ -16,3 +16,5 @@ def proteccion(request):
 
 def login(request):
     return render(request, 'menu/login.html')
+
+
