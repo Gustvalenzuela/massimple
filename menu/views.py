@@ -68,5 +68,8 @@ def Dherra1(request):
 def Dotro1(request):
     return render(request, 'menu/D.otro1.html')
 
+def anadirp(request):
+    return render(request, 'menu/anadirp.html')
+
 
 
