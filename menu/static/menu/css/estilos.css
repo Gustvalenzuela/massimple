@@ -25,6 +25,7 @@ input[type=text] {
     background-repeat: no-repeat;
     padding: 7px 20px 7px 40px;
 }
+
 .tamMedium {
     width: 100%;
     max-width: 355px;
@@ -195,7 +196,8 @@ input[type=text] {
 .div {
     width: 50px;
 }
-.tamanioImgPrinci{
+
+.tamanioImgPrinci {
     width: 100%;
     max-width: 700px;
 }
@@ -217,10 +219,11 @@ input[type=text] {
 .tabla {
     margin-bottom: 50px;
 }
+
 .boton-add2 {
     border-radius: 8px;
     padding: 10px 10px;
-    
+
 
 }
 
@@ -229,7 +232,8 @@ input[type=text] {
     color: #ffffff;
 
 }
-.tamanoPerfil{
+
+.tamanoPerfil {
     width: 100%;
     max-width: 900px;
 }
@@ -259,26 +263,46 @@ input[type=text] {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
-  }
-  
-  th, td {
+}
+
+th,
+td {
     text-align: left;
     padding: 8px;
     border-bottom: 1px solid #ddd;
-  }
-  
-  th {
+}
+
+th {
     background-color: #f2f2f2;
-  }
-  
-  td:nth-child(3) {
+}
+
+td:nth-child(3) {
     text-align: right;
-  }
-  
-  td:nth-child(4) button {
+}
+
+td:nth-child(4) button {
     margin-right: 5px;
-  }
-.imglistado{
+}
+
+.imglistado {
     width: 100%;
     max-width: 100px;
+}
+
+.cart,
+.products {
+    width: 50%;
+    float: left;
+    padding: 20px;
+    background-color: #ff0101;
+}
+
+.cart {
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#total {
+    font-weight: bold;
+    margin-top: 10px;
 }

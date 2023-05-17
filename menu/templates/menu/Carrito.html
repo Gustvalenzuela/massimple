@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static%}
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,7 +17,8 @@
 
     <nav class="navbar navbar-expand-sm" style="background-color: #236ccd;--bs-navbar-padding-y: -0.9rem;">
         <div class="container-fluid">
-            <a href="principal.html" class="navbar-brand"><img class="tamano" src="{% static 'menu/img/logo2.png' %}" alt="Sin imagen"></a>
+            <a href="principal.html" class="navbar-brand"><img class="tamano" src="{% static 'menu/img/logo2.png' %}"
+                    alt="Sin imagen"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -27,7 +29,8 @@
                             data-bs-toggle="dropdown">Categorías</a>
                         <ul class="dropdown-menu dropbtn">
                             <li><a class="dropdown-item dropbtn" href="{% url 'detergentes' %}">Detergentes</a></li>
-                            <li><a class="dropdown-item dropbtn" href="{% url 'productos' %}">Productos de limpieza</a></li>
+                            <li><a class="dropdown-item dropbtn" href="{% url 'productos' %}">Productos de limpieza</a>
+                            </li>
                             <li><a class="dropdown-item dropbtn" href="{% url 'proteccion' %}">Protección</a></li>
                             <li><a class="dropdown-item dropbtn" href="{% url 'Cloro' %}">Cloro</a></li>
                             <li><a class="dropdown-item dropbtn" href="{% url 'Herramientas' %}">Herramientas</a></li>
@@ -50,11 +53,13 @@
                 </form>
 
                 <div class="d-flex carrito_compra_logo">
-                    <a href="{% url 'login' %}"><img class="tamanocarrito" src="{%static 'menu/img/logoperfil3.png '%}" alt="Sin imagen"></a>
+                    <a href="{% url 'login' %}"><img class="tamanocarrito" src="{%static 'menu/img/logoperfil3.png '%}"
+                            alt="Sin imagen"></a>
                 </div>
 
                 <div class="d-flex carrito_compra_logo">
-                    <a href="{% url 'Carrito'%}"><img class="tamanocarrito" src="{%static 'menu/img/Carrito2.png '%}" alt="Sin imagen"></a>
+                    <a href="{% url 'Carrito'%}"><img class="tamanocarrito" src="{%static 'menu/img/Carrito2.png '%}"
+                            alt="Sin imagen"></a>
                 </div>
             </div>
         </div>
@@ -71,105 +76,48 @@
 
         </div>
 
-        <TABLE BORDER=5 WIDTH="40%" HEIGHT="20%" style="margin: 0 auto; text-align: left;">
-            <TR>
-                <TD>Artículos</TD>
-                <TD></TD>
-                <TD>Precio</TD>
-            </TR>
-            <TR>
-                <TD>
-                    <div class="col-md-12 col-sm-12">
-                        <div class="container-items">
-                            <div class="carrito">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="cart">
+                    <h2>Mi carrito</h2>
+                    <ul id="cart-items">
+                        <!-- Aquí se añadirán los elementos del carrito -->
+                    </ul>
+                    <p id="total">Total: $0</p>
+                    <button id="checkout-btn">Realizar pago</button>
+                </div>
+        
+                <div class="products">
+                    <h2>Productos disponibles</h2>
+                    <ul id="product-list">
+                        <li>
+                            <span>Producto 1</span>
+                            <span>$10</span>
+                            <button class="add-to-cart">Agregar al carrito</button>
+                        </li>
+                        <li>
+                            <span>Producto 2</span>
+                            <span>$20</span>
+                            <button class="add-to-cart">Agregar al carrito</button>
+                        </li>
+                        <li>
+                            <span>Producto 3</span>
+                            <span>$30</span>
+                            <button class="add-to-cart">Agregar al carrito</button>
+                        </li>
+                    </ul>
+                </div>
+        
 
-                                <img class="tamcarrito" src="img/omodeter.jpg" alt="Sin imagen">
-                                <h5>Detergente Omo</h5>
-                                <p class="price"> $2.500</p>
-
-                            </div>
-
-
-                        </div>
-
-                    </div>
-                </TD>
-                <TD></TD>
-                <TD>$2.500</TD>
-            </TR>
-            <TR>
-                <TD>
-                    <div class="col-md-12 col-sm-12">
-                        <div class="container-items">
-                            <div class="carrito">
-
-                                <img class="tamcarrito" src="img/cepilloBaño.jpg" alt="Sin imagen">
-                                <h5>Cepillo De Baño </h5>
-                                <p class="price"> $3.300</p>
-
-                            </div>
-
-
-                        </div>
-
-                    </div>
-                </TD>
-                <TD></TD>
-                <TD>$3.300</TD>
-            </TR>
-            <TR>
-                <TD>
-                    <div class="col-md-12 col-sm-12">
-                        <div class="container-items">
-                            <div class="carrito">
-
-                                <img class="tamcarrito" src="img/desengrasante.jpg" alt="Sin imagen">
-                                <h5>Desengrasante</h5>
-                                <h5>Económico</h5>
-                                <p class="price"> $2.000</p>
-
-                            </div>
-
-
-                        </div>
-
-                    </div>
-                </TD>
-                <TD></TD>
-                <TD>$2.000</TD>
-            </TR>
-            <TR>
-                <TD></TD>
-                <TD>Neto:</TD>
-                <TD>$6.318</TD>
-            </TR>
-            <TR>
-                <TD></TD>
-                <TD>IVA 19%:</TD>
-                <TD>$1.482</TD>
-            </TR>
-            <TR>
-                <TD></TD>
-                <TD>Total:</TD>
-                <TD style="color: red;">
-                    <h4>$7.800</h4>
-                </TD>
-            </TR>
-
-            <TR>
-                <TD></TD>
-                <TD></TD>
-                <TD>
-                    <a href="#"><button class="boton-add">Pagar</button> </a>
-                </TD>
-            </TR>
-
-        </TABLE>
-
-
-        <div class="col-md-3 col-sm-12">
-            <br></br>
+            </div>
+            <div class="col-md-3"></div>
         </div>
+
+       
+
+
+        
     </div>
 
 </body>
