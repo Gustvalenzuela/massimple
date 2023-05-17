@@ -30,12 +30,12 @@
                         <a class="nav-link dropdown-toggle dropbtn" href="#" role="button"
                             data-bs-toggle="dropdown">Categorías</a>
                         <ul class="dropdown-menu dropbtn">
-                            <li><a class="dropdown-item dropbtn" href="detergentes.html">Detergentes</a></li>
-                            <li><a class="dropdown-item dropbtn" href="productos.html">Productos de limpieza</a></li>
-                            <li><a class="dropdown-item dropbtn" href="proteccion.html">Protección</a></li>
-                            <li><a class="dropdown-item dropbtn" href="Cloro.html">Cloro</a></li>
-                            <li><a class="dropdown-item dropbtn" href="Herramientas.html">Herramientas</a></li>
-                            <li><a class="dropdown-item dropbtn" href="Otros.html">Otros</a></li>
+                            <li><a class="dropdown-item dropbtn" href="{% url 'detergentes' %}">Detergentes</a></li>
+                            <li><a class="dropdown-item dropbtn" href="{% url 'productos' %}">Productos de limpieza</a></li>
+                            <li><a class="dropdown-item dropbtn" href="{% url 'proteccion' %}">Protección</a></li>
+                            <li><a class="dropdown-item dropbtn" href="{% url 'Cloro' %}">Cloro</a></li>
+                            <li><a class="dropdown-item dropbtn" href="{% url 'Herramientas' %}">Herramientas</a></li>
+                            <li><a class="dropdown-item dropbtn" href="{% url 'Otros' %}">Otros</a></li>
                         </ul>
                     </li>
 
@@ -58,7 +58,7 @@
                 </div>
 
                 <div class="d-flex carrito_compra_logo">
-                    <a href="Carrito.html"><img class="tamanocarrito" src="{%static 'menu/img/Carrito2.png '%}" alt="Sin imagen"></a>
+                    <a href="{% url 'Carrito'%}"><img class="tamanocarrito" src="{%static 'menu/img/Carrito2.png '%}" alt="Sin imagen"></a>
                 </div>
             </div>
         </div>

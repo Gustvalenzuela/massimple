@@ -23,6 +23,9 @@ def cambiocontr(request):
 def Carrito(request):
     return render(request, 'menu/Carrito.html')
 
+def Cloro(request):
+    return render(request, 'menu/Cloro.html')
+
 def crearcuenta(request):
     return render(request, 'menu/crearcuenta.html')
 
@@ -53,6 +56,17 @@ def DetalleMasimple(request):
 def DlavalozaLim(request):
     return render(request,'menu/D.lavalozaLim.html')
 
+def detalleCloroL(request):
+    return render(request, 'menu/detalleCloroL.html')
+
+def detalleGuan(request):
+    return render(request, 'menu/detalleGuan.html')
+
+def Dherra1(request):
+    return render(request, 'menu/D.herra1.html')
+
+def Dotro1(request):
+    return render(request, 'menu/D.otro1.html')
 
 
 
