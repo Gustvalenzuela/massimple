@@ -75,17 +75,8 @@ WSGI_APPLICATION = 'massimple.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.oracle',
-        'NAME': '127.0.0.1:1521/orcl',
-        'USER': 'massimple',
-        'PASSWORD': 'massimple',
-        'TEST': {
-            'USER': 'default_test',
-            'TABLESPACE': 'default_test_tbls',
-            'TBLSPACE_TEMP': 'default_test_tbls_tmp',
-        }
-    }
+    
+    
 }
 
 
