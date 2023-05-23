@@ -73,6 +73,7 @@
                 <h2 class="text-center">Cambio de contraseña</h2>
 
                 <form action="" method="POST" id="form4">
+                    {% csrf_token %}
                     <div class="form-group">
                         <label for="current-password">Contraseña actual: </label>
                         <input class="form-control input-lg" placeholder="Ingresa tu contraseña actual" type="password" id="current-password" name="current_password">
