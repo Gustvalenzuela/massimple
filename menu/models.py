@@ -9,7 +9,7 @@ class Rol(models.Model):
 
 class Pregunta(models.Model):
     idPregunta = models.AutoField(primari_key = True, verbose_name='id de la Pregunta')
-    nombrePregunta = models.CharField(max_length=30, verbose_name='Nombre de la Pregunta', null=True, blank,False)
+    nombrePregunta = models.CharField(max_length=30, verbose_name='Nombre de la Pregunta', null=True, blank=False)
 
 class Categoria(models.Model):
     idCategoria = models.IntergerField(primari_key = True, verbose_name= 'Id de la categoria')
@@ -29,3 +29,28 @@ class Usuario(models.Model):
     respuestaUsuario= models.ChardField(max_length= 100)
     pregunta= models.ForeignKey(Pregunta,on_delete=models.CASCADE)
     rol = models.ForeignKey(Rol,on_delete=models.CASCADE)
+
+class Producto(models.Model):
+    idProducto = models.IntergerField(primary_key=True)
+    nombreProducto = models.CharField(max_length=30, blank=False)
+    descripcion = models.CharField(max_length=300, blank=False)
+    stock = models.IntegerField()
+    precio = models.IntegerField()
+    fotoProducto = models.ImageField(upload_to="massimple", blank=False)
+    categoria = models.ForeignKey(Categoria,on_delete=models.CASCADE)
+
+class Compra(models.Model):
+    idCompra = models.AutoField(primary_key=True)
+    estatus = models.CharField(max_length=50, blank=False)
+    fEntrega = models.DateField()
+    fCompra = models.DateField()
+    total = models.IntegerField()
+    carrito = models.CharField(max_length=60)
+    usuario = models.ForeignKey(Usuario,on_delete=models.CASCADE)
+
+class Detalle(models.Model):
+    idDetalle = models.AutoField(primary_key=True)
+    cantidad = models.IntegerField()
+    subtotal = models.IntegerField()
+    compra = models.ForeignKey(Compra,on_delete=models.CASCADE)
+    producto = models.ForeignKey(Producto,on_delete=models.CASCADE)
