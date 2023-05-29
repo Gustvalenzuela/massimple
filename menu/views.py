@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+from .models import Producto, Categoria
 
 # Create your views here.
 def principal (request):
@@ -69,7 +70,28 @@ def Dotro1(request):
     return render(request, 'menu/D.otro1.html')
 
 def anadirp(request):
-    return render(request, 'menu/anadirp.html')
+    listaCategorias : Categoria.objects.all()
+    contexto = {
 
+        "categorias": listaCategorias
 
+    }
 
+    return render(request, 'menu/anadirp.html', contexto)
+
+def formProducto(request):
+    vId: request.POST['idProducto']
+    vNombre: request.POST['nombre']
+    vDescripcion: request.POST['descripcion']
+    vStock: request.POST['stock']
+    vMarca: request.POST['marca']
+    vPrecio: request.POST['precio']
+    
+    vFoto: request.FILE['foto']
+    vCategoria: request.POST['categoria']
+
+    vRegistroCategoria = Producto.objects.get(idCategoria = vCategoria)
+    Producto.objects.create(idProducto = vId, nombreProducto = vNombre, descripcion = vDescripcion, stock = vStock, precio = vPrecio, fotoProducto = vFoto, categoria = vRegistroCategoria)
+
+    
+    return redirect('anadirp')
