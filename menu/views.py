@@ -70,7 +70,7 @@ def Dotro1(request):
     return render(request, 'menu/D.otro1.html')
 
 def anadirp(request):
-    listaCategorias : Categoria.objects.all()
+    listaCategorias = Categoria.objects.all()
     contexto = {
 
         "categorias": listaCategorias
