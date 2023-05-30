@@ -80,18 +80,17 @@ def anadirp(request):
     return render(request, 'menu/anadirp.html', contexto)
 
 def formProducto(request):
-    vId: request.POST['idProducto']
-    vNombre: request.POST['nombre']
-    vDescripcion: request.POST['descripcion']
-    vMarca: request.POST['marca']
-    vStock: request.POST['stock']
-   
-    vPrecio: request.POST['precio']
+    vId = request.POST['idProducto']
+    vNombre = request.POST['nombre']
+    vDescripcion = request.POST['descripcion']
+    vMarca = request.POST['marca']
+    vStock = request.POST['stock']
+    vPrecio = request.POST['precio']
     
-    vFoto: request.FILE['foto']
-    vCategoria: request.POST['categoria']
+    vFoto = request.FILES['foto']
+    vCategoria = request.POST['categoria']
 
-    vRegistroCategoria = Producto.objects.get(idCategoria = vCategoria)
+    vRegistroCategoria = Categoria.objects.get(idCategoria = vCategoria)
     Producto.objects.create(idProducto = vId, nombreProducto = vNombre, descripcion = vDescripcion, marca = vMarca, stock = vStock, precio = vPrecio, fotoProducto = vFoto, categoria = vRegistroCategoria)
 
     

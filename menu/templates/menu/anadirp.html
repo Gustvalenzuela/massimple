@@ -71,10 +71,10 @@
             <div id="login" class="col-lg-4 offset-lg-4 col-md-6 offset-md-3
                 col-12">
                 <h2 class="text-center">Añadir producto</h2>
-                <form action="" method="POST" enctype="multipart/form-data" id="form4">
+                <form action="{% url 'formProducto' %}" method="POST" enctype="multipart/form-data" id="">
                     {% csrf_token %}
                     <div class="form-group">
-                        <label for="current-password">Id: </label>
+                        <label >Id: </label>
                         <input class="form-control input-lg" placeholder="Ingresa el Id del producto" type="" id="IdProducto" name="idProducto">
                     </div>
                     <div class="form-group">

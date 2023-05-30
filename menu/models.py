@@ -40,6 +40,9 @@ class Producto(models.Model):
     fotoProducto = models.ImageField(upload_to="massimple", blank=False)
     categoria = models.ForeignKey(Categoria,on_delete=models.CASCADE)
 
+
+
+
 class Compra(models.Model):
     idCompra = models.AutoField(primary_key=True)
     estatus = models.CharField(max_length=50, blank=False)
