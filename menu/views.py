@@ -92,7 +92,7 @@ def formProducto(request):
     vCategoria: request.POST['categoria']
 
     vRegistroCategoria = Producto.objects.get(idCategoria = vCategoria)
-    Producto.objects.create(idProducto = vId, nombreProducto = vNombre, descripcion = vDescripcion, stock = vStock, precio = vPrecio, fotoProducto = vFoto, categoria = vRegistroCategoria)
+    Producto.objects.create(idProducto = vId, nombreProducto = vNombre, descripcion = vDescripcion, marca = vMarca, stock = vStock, precio = vPrecio, fotoProducto = vFoto, categoria = vRegistroCategoria)
 
     
     return redirect('anadirp')
