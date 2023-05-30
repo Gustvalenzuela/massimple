@@ -34,6 +34,7 @@ class Producto(models.Model):
     idProducto = models.IntegerField(primary_key=True)
     nombreProducto = models.CharField(max_length=30, blank=False)
     descripcion = models.CharField(max_length=300, blank=False)
+    marca = models.CharField(max_length=30, blank=False)
     stock = models.IntegerField()
     precio = models.IntegerField()
     fotoProducto = models.ImageField(upload_to="massimple", blank=False)

@@ -83,8 +83,9 @@ def formProducto(request):
     vId: request.POST['idProducto']
     vNombre: request.POST['nombre']
     vDescripcion: request.POST['descripcion']
-    vStock: request.POST['stock']
     vMarca: request.POST['marca']
+    vStock: request.POST['stock']
+   
     vPrecio: request.POST['precio']
     
     vFoto: request.FILE['foto']
