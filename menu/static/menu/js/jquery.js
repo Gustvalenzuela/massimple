@@ -122,7 +122,7 @@ $(document).ready(function () {
 //PAGINA LOGIN
 $(document).ready(function () {
     $("#form2").submit(function (e) {
-        e.preventDefault();
+       
 
         var correo = $("#correo").val();
         var clave = $("#password").val();
@@ -132,6 +132,7 @@ $(document).ready(function () {
         let enviar = false;
 
         if (correo == 'amoprogramacion@gmail.com' && clave == 'Taylorswift#13') {
+             e.preventDefault();
             // La palabra es correcta, permitir el acceso
             $('#mi-boton').click(function () {
                 window.location.href = 'perfilusuario.html';

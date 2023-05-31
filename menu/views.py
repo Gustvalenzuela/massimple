@@ -79,6 +79,10 @@ def anadirp(request):
 
     return render(request, 'menu/anadirp.html', contexto)
 
+def modificarP(request):
+    
+    return render(request,'menu/modificarP.html')
+
 def formProducto(request):
     vId = request.POST['idProducto']
     vNombre = request.POST['nombre']
