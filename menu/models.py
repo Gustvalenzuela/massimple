@@ -12,7 +12,7 @@ class Pregunta(models.Model):
     nombrePregunta = models.CharField(max_length=30, verbose_name='Nombre de la Pregunta', null=True, blank=False)
 
 class Categoria(models.Model):
-    idCategoria = models.IntegerField(primary_key = True, verbose_name= 'Id de la categoria')
+    idCategoria = models.AutoField(primary_key = True, verbose_name= 'Id de la categoria')
     nombreCategoria = models.CharField(max_length=30, verbose_name='Nombre de las categoria', null= True, blank=False)
 
 
