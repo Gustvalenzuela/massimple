@@ -37,16 +37,19 @@
                             <th>Acciones</th>
                         </tr>
                     </thead>
+                    {% for p in productos %}
                     <tbody id="productos">
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>{{ p.idProducto }}</td>
+                            <td>{{ p.nombreProducto }}</td>
+                            <td>{{ p.descripcion }}</td>
+                            <td>{{ p.marca }}</td>
+                            <td>{{ p.stock }}</td>
+                            <td>{{ p.precio }}</td>
+                            <td>
+                                <img class="tam" src="{{ p.fotoProducto.url  }}" alt="No foto">
+                            </td>
+                            <td>{{ p.categoria.nombreCategoria }}</td>
                             <td>
                                 <a href="" class="btn btn-primary">Modificar</a><br>
                                 <a href="" class="btn btn-danger">Eliminar</a>
@@ -55,6 +58,7 @@
                        
 
                     </tbody>
+                    {% endfor %}
                 </table>
 
                 <button class="btn btn-primary" id="agregar">Agregar producto</button>

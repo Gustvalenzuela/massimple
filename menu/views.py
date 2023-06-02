@@ -21,29 +21,9 @@ def proteccion(request):
     return render(request, 'menu/proteccion.html')
 
 def login(request):
-    usuario1 = request.POST['usuario']#fromulario
-    contra1 = request.POST['contra']
-    try: 
-        user1 = User.objects.get(username = usuario1)
-    except User.DoesNotExist:
-        messages.error(request, 'El usuario o la contraseña son incorrectos')
-        return redirect('inicio')
+    
 
-    pass_valida = check_password(contra1, user1.password)
-    if not pass_valida:
-        messages.error(request,'El usuario o la contraseña son incorrectos')
-        return redirect('inicio')
-
-    usuario2 = Usuario.objects.get(username = usuario1, contrasennia = contra1)
-    user = authenticate(username=usuario1, password=contra1)
-    if user is not None:
-        login(request, user)
-        if( usuario2.tipousuario.idTipoUsuario == 1):
-            return redirect('menu_admin')
-        else:
-            conexto = ("usuario":usuario2)
-
-            return render(request, 'menu/principal.html', contexto)
+    return render(request, 'menu/login.html', )
     
 
 def cambiocontr(request):
@@ -67,7 +47,11 @@ def Herramientas(request):
     return render(request, 'menu/Herramientas.html')
 
 def listado(request):
-    return render(request, 'menu/listado.html')
+    lista = Producto.objects.all()
+    contexto = {
+        "productos": lista
+    }
+    return render(request, 'menu/listado.html', contexto)
 
 def Otros(request):
     return render(request, 'menu/Otros.html')
@@ -109,9 +93,15 @@ def anadirp(request):
 
     return render(request, 'menu/anadirp.html', contexto)
 
-def modificarP(request):
+def modificarP(request, id):
+    categorias = Categoria.objects.all()
+    producto = Producto.objects.get(idCategoria = id)
+    contexto = {
+        "lista_categorias": categorias,
+        "datos": producto
+    }
     
-    return render(request,'menu/modificarP.html')
+    return render(request,'menu/modificarP.html', contexto)
 
 def formProducto(request):
     vId = request.POST['idProducto']

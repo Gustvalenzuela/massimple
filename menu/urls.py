@@ -27,7 +27,7 @@ urlpatterns = [
     path('Dherra1', Dherra1, name="Dherra1"),
     path('Dotro1', Dotro1, name="Dotro1"),
     path('anadirp', anadirp, name="anadirp"),
-    path('modificarP', modificarP, name="modificarP"),
+    path('modificarP<int:id>', modificarP, name="modificarP"),
     path('formProducto', formProducto, name="formProducto"),
 
     
