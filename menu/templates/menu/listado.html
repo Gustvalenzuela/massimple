@@ -51,8 +51,8 @@
                             </td>
                             <td>{{ p.categoria.nombreCategoria }}</td>
                             <td>
-                                <a href="" class="btn btn-primary">Modificar</a><br>
-                                <a href="" class="btn btn-danger">Eliminar</a>
+                                <a href="{% url 'modificarProducto' p.idProducto %}" class="btn btn-primary">Modificar</a><br>
+                                <a href="{% url 'eliminarProducto' p.idProducto %}" class="btn btn-danger">Eliminar</a>
                             </td>
                         </tr>
                        

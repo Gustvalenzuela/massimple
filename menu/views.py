@@ -119,3 +119,36 @@ def formProducto(request):
 
     
     return redirect('anadirp')
+
+
+def eliminarProducto(request, id):
+    producto = Producto.objects.get(idCategoria = id)
+    producto.delete()
+    return redirect('listado')
+
+def modificarProducto(request):
+    idM = request.POST['idProducto']
+    nombreM = request.POST['nombre']
+    descripcionM = request.POST['descripcion']
+    marcaM = request.POST['marca']
+    stockM = request.POST['stock']
+    precioM = request.POST['precio']
+    fotoM = request.FILES['foto']
+    categoriaM = request.POST['categoria']
+
+    producto = Producto.objects.get(idProducto = idM)
+    producto.nombreProducto = nombreM
+    producto.descripcion = descripcionM
+    producto.marca = marcaM
+    producto.stock = stockM
+    producto.precio = precioM
+    producto.fotoProducto = fotoM
+    
+    registroCategoria = Categoria.objects.get(idCategoria = categoriaM)
+    producto.categoria = registroCategoria
+
+    producto.save()
+    return redirect('listado')
+
+
+
