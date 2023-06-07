@@ -95,7 +95,7 @@ def anadirp(request):
 
 def modificarP(request, id):
     categorias = Categoria.objects.all()
-    producto = Producto.objects.get(idCategoria = id)
+    producto = Producto.objects.get(idProducto = id)
     contexto = {
         "lista_categorias": categorias,
         "datos": producto
@@ -122,7 +122,7 @@ def formProducto(request):
 
 
 def eliminarProducto(request, id):
-    producto = Producto.objects.get(idCategoria = id)
+    producto = Producto.objects.get(idProducto = id)
     producto.delete()
     return redirect('listado')
 

@@ -30,7 +30,7 @@ urlpatterns = [
     path('modificarP/<int:id>', modificarP, name="modificarP"),
     path('formProducto', formProducto, name="formProducto"),
     path('eliminarProducto/<int:id>', eliminarProducto, name="eliminarProducto"),
-    path('modificarProducto/<int:id>', modificarProducto, name="modificarProducto"),
+    path('modificarProducto', modificarProducto, name="modificarProducto"),
     
     
 
