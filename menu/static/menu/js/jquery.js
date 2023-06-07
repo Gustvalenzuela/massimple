@@ -374,6 +374,41 @@ $(document).ready(function () {
 
 });
 
+$(document).ready(function () {
+    $("#form6").submit(function (e) {
+        
+        var id = $("#id").val();
+        var nombre = $("#nombre").val();
+        var descripcion = $("#descripcion").val();
+        var marca = $("#marca").val();
+        var stock = $("#stock").val();
+        var precio = $("#precio").val();
+
+        let msjMostrar = "";
+        let enviar = false;
+
+        if (descripcion.trim().length < 8) {
+            e.preventDefault();
+            msjMostrar += "<br>La contraseña debe tener al menos 8 carácteres";
+            
+        }
+
+        if (enviar) {
+            $("#warnings").html(msjMostrar);
+        }
+        else {
+            $("#warnings").html("");
+        }
+
+
+
+    });
+
+
+});
+
+
+
 
 
 
