@@ -16,8 +16,8 @@ $(document).ready(function () {
             return false;
         }
 
-        if (nombre.trim().length < 4 || nombre.trim().length > 10) {                        //validar nombre
-            msjMostrar = msjMostrar + "El nombre debe tener entre 4 y 10 caracteres";
+        if (nombre.trim().length < 4 || nombre.trim().length > 14) {                        //validar nombre
+            msjMostrar = msjMostrar + "El nombre debe tener entre 4 y 14 caracteres";
             enviar = true;
         }
         else if (/\d/.test(nombre)) {
