@@ -23,45 +23,66 @@
         <div class="row">
             <div class="col-md-4 d-sm-12"></div>
             <div class="col-md-4 col-sm-12">
-                <form action="" method="POST" id="form1">
+                <form action="{% url 'formUsuario' %}" method="POST" id="form1">
                     {% csrf_token %}
 
                     <div class="form-group">
                         <label>Rut: </label>
-                        <input class="form-control" name="nombre" placeholder="Escriba su rut" value="" id="rut">
+                        <input class="form-control" name="rut" placeholder="Escriba su rut" value="" id="rut">
                     </div>
 
                     <div class="form-group">
                         <label>Nombre: </label>
                         <input class="form-control" name="nombre" placeholder="Escriba su nombre" value="" id="name">
                     </div>
+                    <div class="form-group">
+                        <label>Apellido: </label>
+                        <input class="form-control" name="apellido" placeholder="Escriba su apellido" value="" id="apellido">
+                    </div>
+                    <div class="form-group">
+                        <label>Telefono: </label>
+                        <input class="form-control" name="telefono" placeholder="Escriba su telefono" value="" id="telefono">
+                    </div>
 
                     <div class="form-group">
                         <label>Correo: </label>
-                        <input class="form-control" name="nombre" placeholder="Escriba su nombre" value="" id="email">
+                        <input class="form-control" name="email" placeholder="Escriba su correo" value="" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label>Fecha: </label>
+                        <input class="form-control" type="date"name="fecha" placeholder="Escriba su correo" value="" id="fecha">
                     </div>
 
 
 
                     <div class="grupo">
                         <label for="">Contraseña:</label>
-                        <input class="form-control" type="password" name="" id="password"
+                        <input class="form-control" type="password" name="password" id="password"
                             placeholder="Escriba su contraseña"><span class="barra" required></span>
 
                     </div>
                     <div class="grupo">
                         <label for="">Reingrese la contraseña: </label>
-                        <input class="form-control" type="password" name="" id="password"
+                        <input class="form-control" type="password" name="password" id="password"
                             placeholder="Reingrese su contraseña"><span class="barra" required></span>
 
                     </div>
-
-
-                    <div>
-                        <label>Fecha de nacimiento: </label>
-                        <input class="form-control" type="date" name="" id="fecha">
+                    <div class="grupo">
+                        <label>Preguntas</label>
+                       <select class="form-control" name="pregunta" id="pregunta">
+                           {% for x in preguntas %}
+                           <option value="{{ x.idPregunta }}">{{ x.nombrePregunta }}</option>
+                           {% endfor %}
+                       </select>
                     </div>
-                    <br>
+
+                    <div class="form-group">
+                        <label>Respuesta: </label>
+                        <input class="form-control" name="respuesta" placeholder="Escriba su respuesta" value="" id="respuesta">
+                    </div>
+
+
+                    
 
 
                     <button type="submit">Enviar</button>

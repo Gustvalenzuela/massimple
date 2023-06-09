@@ -1,11 +1,14 @@
 from django.shortcuts import render,redirect
-from .models import Producto, Categoria
+from .models import Producto, Categoria, Usuario, Rol, Compra, Pregunta, Detalle
 from django.contrib import messages
 
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import check_password
 from django.contrib.auth import authenticate,login, logout
 # Create your views here.
+
+
+
 
 def principal (request):
     return render(request,'menu/principal.html')
@@ -36,9 +39,15 @@ def Cloro(request):
     return render(request, 'menu/Cloro.html')
 
 def crearcuenta(request):
+    listaPreguntas = Pregunta.objects.all()
+    contexto = {
+        "preguntas": listaPreguntas
+    }
+
+
     
 
-    return render(request, 'menu/crearcuenta.html')
+    return render(request, 'menu/crearcuenta.html', contexto)
 
 def EditarPerfil(request):
     return render(request, 'menu/EditarPerfil.html')
@@ -119,6 +128,25 @@ def formProducto(request):
 
     
     return redirect('anadirp')
+
+def formUsuario(request):
+    vRut = request.POST['rut']
+    vNombreU = request.POST['nombre']
+    vApellido = request.POST['apellido']
+    vTelefono = request.POST['telefono']
+    vCorreo = request.POST['email']
+    vFecha = request.POST['fecha']
+    vContra = request.POST['password']
+    vRespuesta = request.POST['respuesta']
+    vPregunta = request.POST['pregunta']
+    vRol = 1
+    
+    vRegistroRol = Rol.objects.get(idRol = vRol)
+    vRegistroPregunta = Pregunta.objects.get(idPregunta = vPregunta)
+    Usuario.objects.create(rutUsuario = vRut, nombreUsuario = vNombreU, apellidoUsuario = vApellido, telefonoUsuario= vTelefono,
+                            correoUsuario = vCorreo, fechaUsuario= vFecha, claveUsuario= vContra, respuestaUsuario = vRespuesta, pregunta = vRegistroPregunta, rol = vRegistroRol )
+
+    return redirect('crearcuenta')
 
 
 def eliminarProducto(request, id):
