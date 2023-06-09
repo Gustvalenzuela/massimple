@@ -1,7 +1,7 @@
 //PAGINA CREAR CUENTA
 $(document).ready(function () {
     $("#form1").submit(function (e) {
-        e.preventDefault();
+        
         var nombre = $("#name").val();
         var correoc = $("#email").val();
         var clave = $("#password").val();
@@ -40,6 +40,7 @@ $(document).ready(function () {
         }
         if (clave.trim().length < 8) {
             msjMostrar += "<br>La contraseña debe tener al menos 8 carácteres";
+            e.preventDefault();
             
         }
         else if (!/\d/.test(clave)) {

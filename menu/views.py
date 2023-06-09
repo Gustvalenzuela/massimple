@@ -36,7 +36,7 @@ def Cloro(request):
     return render(request, 'menu/Cloro.html')
 
 def crearcuenta(request):
-    user = User.objects.create_user("vale", "vale@gmail.com", "contradevale")
+    
 
     return render(request, 'menu/crearcuenta.html')
 
