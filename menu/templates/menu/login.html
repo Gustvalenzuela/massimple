@@ -15,7 +15,7 @@
                 <h2 class="text-center">Inicio sesión</h2>
 
 
-                <form action="" method="POST" id="form2">
+                <form action="{% url 'formSesion' %}" method="POST" id="form2">
                     {% csrf_token %}
 
                     <div class="form-group">
@@ -32,7 +32,13 @@
                     <br>
 
                     <button type="submit" id="mi-boton">Entrar</button>
-                    
+                    {% if messages %}
+                    <ul   class="messages">
+                    {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                    </ul>
+                    {% endif %}
 
     
                    <br>
@@ -42,6 +48,8 @@
                     <a href="{% url 'recuperar' %}">Contraseña olvidada</a>
                     <a href="{% url 'anadirp' %}">anadir</a>
                     <p class="warnings" id="warnings"></p>
+
+
                 </form>
             </div>
         </div>

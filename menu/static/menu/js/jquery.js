@@ -1,8 +1,10 @@
 //PAGINA CREAR CUENTA
 $(document).ready(function () {
     $("#form1").submit(function (e) {
-        
+        var rut = $("#rut").val();
         var nombre = $("#name").val();
+        var apellido = $("#apellido").val();
+        var telefono = $("#telefono").val();
         var correoc = $("#email").val();
         var clave = $("#password").val();
         var fecha = $("#fecha").val();
@@ -19,19 +21,23 @@ $(document).ready(function () {
         if (nombre.trim().length < 4 || nombre.trim().length > 14) {                        //validar nombre
             msjMostrar = msjMostrar + "El nombre debe tener entre 4 y 14 caracteres";
             enviar = true;
+            e.preventDefault();
         }
         else if (/\d/.test(nombre)) {
             msjMostrar += "<br> El nombre no puede contener números";
             enviar = true;
+            e.preventDefault();
         }
 
         var letra = nombre.trim().charAt(0);
         if (!esMayuscula(letra)) {
             msjMostrar += "<br>El nombre debe comenzar con mayúscula";
             enviar = true;
+            e.preventDefault();
         }
         if (isValidEmail(correoc)) {
             enviar = true;
+            e.preventDefault();
 
         } else {
             // El correo no es válido, mostrar un mensaje de error
@@ -40,25 +46,34 @@ $(document).ready(function () {
         }
         if (clave.trim().length < 8) {
             msjMostrar += "<br>La contraseña debe tener al menos 8 carácteres";
+            enviar = true;
             e.preventDefault();
             
         }
         else if (!/\d/.test(clave)) {
             msjMostrar += "<br>La contraseña debe contener al menos un número";
+            enviar = true;
+            e.preventDefault();
             
         }
         else if (!/[a-z]/.test(clave)) {
             msjMostrar += "<br>La contraseña debe contener al menos una letra minúscula";
+            enviar = true;
+            e.preventDefault();
             
 
         }
         else if (!/[A-Z]/.test(clave)) {
             msjMostrar += "<br>La contraseña debe contener al menos una letra mayúscula";
+            enviar = true;
+            e.preventDefault();
             
 
         }
         else if (!/[!@#$&*]/.test(clave)) {
             msjMostrar += "<br>La contraseña debe contener al menos un carácter especial";
+            enviar = true;
+            e.preventDefault();
             
 
         }
@@ -74,6 +89,7 @@ $(document).ready(function () {
             } else {
                 msjMostrar += "<br>Debes tener al menos 18 años para registrarte";
                 enviar = true;
+                e.preventDefault();
             }
         } else {
 

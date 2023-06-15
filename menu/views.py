@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import check_password
 from django.contrib.auth import authenticate,login, logout
+
 # Create your views here.
 
 
@@ -66,10 +67,10 @@ def Otros(request):
     return render(request, 'menu/Otros.html')
 
 def perfiladmin(request):
-    return render(request, 'menu/perfiladmin')
+    return render(request, 'menu/perfiladmin.html')
 
 def perfilusuario(request):
-    return render(request, 'menu/perfilusuario')
+    return render(request, 'menu/perfilusuario.html')
 
 def recuperar(request):
     return render(request, 'menu/recuperar.html')
@@ -178,5 +179,47 @@ def modificarProducto(request):
     producto.save()
     return redirect('listado')
 
+def formSesion(request):
+    try:
+        vCorreo = request.POST['correo']
+        vContra = request.POST['palabraSecreta']
+        vRol = 0
+        vRun= 0
+        registro = Usuario.objects.all()
 
+
+        for rol in registro:
+            if rol.correoUsuario == vCorreo and rol.claveUsuario == vContra:
+
+                    vRun = rol.idUsuario
+                    vRol = rol.rol.idRol
+        user1 = User.objects.get(username = vCorreo)
+        print(user1.username)
+        pass_valida = check_password(vContra,user1.password)
+
+        if not pass_valida:
+            messages.error(request,"El usuario o la contraseña son incorrectos")
+            return redirect('login')
+
+        user = authenticate(username=vCorreo,password = vContra)
+
+        print(user)
+        if user is not None:
+            if vRol == 1:
+                login(request,user)
+                return redirect(f'perfilusuario/{vRun}')
+
+
+            if vRol == 2:
+                login(request,user)
+                return redirect('perfiladmin') 
+
+            if vRol == 0:
+                messages.success(request, "Usuario no registrado")
+                return redirect('login')
+    except User.DoesNotExist:
+            messages.error(request,"El usuario no existe")
+            return redirect('login')
+    except Exception as e:
+        print(e)
 
