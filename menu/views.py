@@ -54,6 +54,7 @@ def EditarPerfil(request):
     return render(request, 'menu/EditarPerfil.html')
 
 def Herramientas(request):
+
     return render(request, 'menu/Herramientas.html')
 
 def listado(request):
@@ -70,6 +71,7 @@ def perfiladmin(request):
     return render(request, 'menu/perfiladmin.html')
 
 def perfilusuario(request):
+    
     return render(request, 'menu/perfilusuario.html')
 
 def recuperar(request):
@@ -114,7 +116,7 @@ def modificarP(request, id):
     return render(request,'menu/modificarP.html', contexto)
 
 def formProducto(request):
-    vId = request.POST['idProducto']
+    
     vNombre = request.POST['nombre']
     vDescripcion = request.POST['descripcion']
     vMarca = request.POST['marca']
@@ -125,7 +127,7 @@ def formProducto(request):
     vCategoria = request.POST['categoria']
 
     vRegistroCategoria = Categoria.objects.get(idCategoria = vCategoria)
-    Producto.objects.create(idProducto = vId, nombreProducto = vNombre, descripcion = vDescripcion, marca = vMarca, stock = vStock, precio = vPrecio, fotoProducto = vFoto, categoria = vRegistroCategoria)
+    Producto.objects.create( nombreProducto = vNombre, descripcion = vDescripcion, marca = vMarca, stock = vStock, precio = vPrecio, fotoProducto = vFoto, categoria = vRegistroCategoria)
 
     
     return redirect('anadirp')
@@ -179,7 +181,7 @@ def modificarProducto(request):
     producto.save()
     return redirect('listado')
 
-def formSesion(request):
+def inicioSesion(request):
     try:
         vCorreo = request.POST['correo']
         vContra = request.POST['palabraSecreta']
@@ -207,7 +209,7 @@ def formSesion(request):
         if user is not None:
             if vRol == 1:
                 login(request,user)
-                return redirect(f'perfilusuario/{vRun}')
+                return redirect(f'perfilusuario{vRun}')
 
 
             if vRol == 2:
@@ -222,4 +224,3 @@ def formSesion(request):
             return redirect('login')
     except Exception as e:
         print(e)
-

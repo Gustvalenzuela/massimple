@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 
-from .views import formSesion,formUsuario,modificarProducto,eliminarProducto,modificarP,formProducto,principal,detergentes,productos, proteccion,login,cambiocontr,Carrito,crearcuenta,EditarPerfil,Herramientas,listado,Otros,perfiladmin,perfilusuario,recuperar,DlavalozaLim,Cloro,detalleCloroL,DetalleMasimple,detalleGuan, Dherra1, Dotro1,anadirp
+from .views import inicioSesion,formUsuario,modificarProducto,eliminarProducto,modificarP,formProducto,principal,detergentes,productos, proteccion,login,cambiocontr,Carrito,crearcuenta,EditarPerfil,Herramientas,listado,Otros,perfiladmin,perfilusuario,recuperar,DlavalozaLim,Cloro,detalleCloroL,DetalleMasimple,detalleGuan, Dherra1, Dotro1,anadirp
 
 urlpatterns = [
     path('',principal,name="inicio"),
@@ -18,7 +18,7 @@ urlpatterns = [
     path('listado',listado,name="listado"),
     path('Otros',Otros,name="Otros"),
     path('perfiladmin/<int:id>',perfiladmin,name="perfiladmin"),
-    path('perfilusuario/<int:id>',perfilusuario,name="perfilusuario"),
+    path('perfilusuario',perfilusuario,name="perfilusuario"),
     path('recuperar',recuperar,name="recuperar"),
     path('DetalleMasimple', DetalleMasimple, name="DetalleMasimple"),
     path('DlavalozaLim',DlavalozaLim, name="DlavalozaLim"),
@@ -32,7 +32,9 @@ urlpatterns = [
     path('eliminarProducto/<int:id>', eliminarProducto, name="eliminarProducto"),
     path('modificarProducto', modificarProducto, name="modificarProducto"),
     path('formUsuario', formUsuario, name="formUsuario"),
-    path('formSesion', formSesion, name="formSesion"),
+    path('inicioSesion', inicioSesion, name="inicioSesion"),
+ 
+    
     
     
 

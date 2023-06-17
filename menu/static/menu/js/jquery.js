@@ -394,7 +394,6 @@ $(document).ready(function () {
 $(document).ready(function () {
     $("#form6").submit(function (e) {
         
-        var id = $("#id").val();
         var nombre = $("#nombre").val();
         var descripcion = $("#descripcion").val();
         var marca = $("#marca").val();
@@ -404,14 +403,22 @@ $(document).ready(function () {
         let msjMostrar = "";
         let enviar = false;
 
+        if (nombre === '') {
+            msjMostrar += "El campo es requerido";
+            enviar = true;
+            e.preventDefault();   
+        }
+
         if (descripcion.trim().length < 8) {
-            e.preventDefault();
-            msjMostrar += "<br>La contraseña debe tener al menos 8 carácteres";
             
+            msjMostrar += "<br>La descripción debe tener al menos 8 carácteres";
+            enviar = true;
+            e.preventDefault();
         }
 
         if (enviar) {
             $("#warnings").html(msjMostrar);
+            
         }
         else {
             $("#warnings").html("");
@@ -423,7 +430,6 @@ $(document).ready(function () {
 
 
 });
-
 
 
 
