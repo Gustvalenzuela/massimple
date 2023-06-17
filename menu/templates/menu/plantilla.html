@@ -44,16 +44,27 @@
                     <li class="nav-item">
                         <a class="nav-link" href="javascript:void(0)">Link</a>
                     </li>-->
-                </ul>
-                <form class="d-flex tamanobuscar">
-                    <input class="form-control me-2 " type="text" placeholder="Buscar...">
-                    <button class="btn btn-primary" type="button">Buscar</button>
 
-                </form>
+                    
+
+                </ul>
+                {% if user.is_authenticated %}
 
                 <div class="d-flex carrito_compra_logo">
-                    <a href="{% url 'login' %}"><img class="tamanocarrito" src="{%static 'menu/img/logoperfil3.png '%}" alt="Sin imagen"></a>
+                    <a class="nav-link" href="{% url 'login' %}" >Cerrar sesión</a>
                 </div>
+                {% else %}
+                <div class="d-flex carrito_compra_logo">
+                    <a class="nav-link" href="{% url 'login' %}" >Iniciar sesión </a>
+                </div>
+
+                {% endif %}
+                
+
+                
+                    
+
+                
 
                 <div class="d-flex carrito_compra_logo">
                     <a href="{% url 'Carrito'%}"><img class="tamanocarrito" src="{%static 'menu/img/Carrito2.png '%}" alt="Sin imagen"></a>

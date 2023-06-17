@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import check_password
 from django.contrib.auth import authenticate,login, logout
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -13,6 +14,12 @@ from django.contrib.auth import authenticate,login, logout
 
 def principal (request):
     return render(request,'menu/principal.html')
+
+def plantilla(request):
+    return render(request, 'menu/plantilla.html')
+
+def plantillaDetalle(request):
+    return render(request, 'menu/plantillaDetalle.html')
 
 
 def detergentes(request):
@@ -25,6 +32,7 @@ def proteccion(request):
     return render(request, 'menu/proteccion.html')
 
 def login(request):
+    logout(request)
     
 
     return render(request, 'menu/login.html', )
@@ -68,7 +76,11 @@ def Otros(request):
     return render(request, 'menu/Otros.html')
 
 def perfiladmin(request):
-    return render(request, 'menu/perfiladmin.html')
+    lista = Usuario.objects.all()
+    contexto = {
+        "usuarios": lista
+    }
+    return render(request, 'menu/perfiladmin.html', contexto)
 
 def perfilusuario(request):
     
@@ -181,46 +193,39 @@ def modificarProducto(request):
     producto.save()
     return redirect('listado')
 
-def inicioSesion(request):
+
+
+def iniciosesion (request):
+    usuario1 = request.POST['correo']
+    contrasenia1 = request.POST['palabraSecreta']
+
+    
+
     try:
-        vCorreo = request.POST['correo']
-        vContra = request.POST['palabraSecreta']
-        vRol = 0
-        vRun= 0
-        registro = Usuario.objects.all()
-
-
-        for rol in registro:
-            if rol.correoUsuario == vCorreo and rol.claveUsuario == vContra:
-
-                    vRun = rol.idUsuario
-                    vRol = rol.rol.idRol
-        user1 = User.objects.get(username = vCorreo)
-        print(user1.username)
-        pass_valida = check_password(vContra,user1.password)
-
-        if not pass_valida:
-            messages.error(request,"El usuario o la contraseña son incorrectos")
-            return redirect('login')
-
-        user = authenticate(username=vCorreo,password = vContra)
-
-        print(user)
-        if user is not None:
-            if vRol == 1:
-                login(request,user)
-                return redirect(f'perfilusuario{vRun}')
-
-
-            if vRol == 2:
-                login(request,user)
-                return redirect('perfiladmin') 
-
-            if vRol == 0:
-                messages.success(request, "Usuario no registrado")
-                return redirect('login')
+        user1= User.objects.get(username = usuario1)
     except User.DoesNotExist:
-            messages.error(request,"El usuario no existe")
-            return redirect('login')
-    except Exception as e:
-        print(e)
+        messages.error(request, 'El usuario ingresado no existe')
+        return redirect('login')
+    
+    pass_valida= check_password(contrasenia1, user1.password)
+    if not pass_valida:
+        messages.error(request,'El usuario o la contraseña son incorrectos')
+        return redirect('login')
+    
+    usuario2 = Usuario.objects.get(correoUsuario=usuario1, claveUsuario=contrasenia1)
+    user = authenticate(username=usuario1, password=contrasenia1)
+    
+    if user is not None:
+        login(request)
+        if (usuario2.rol.idRol == 2 ):
+            return redirect ('perfiladmin')
+        else:
+            contexto = {"usuario": usuario2}
+            return render(request, 'menu/perfilusuario.html', contexto)
+        
+
+def cerrarSesion(request):
+    logout(request)
+    return redirect('login')
+
+   

@@ -15,7 +15,7 @@
                 <h2 class="text-center">Inicio sesión</h2>
 
 
-                <form action="{% url 'inicioSesion' %}" method="POST" id="">
+                <form action="{% url 'iniciosesion' %}" method="POST" id="">
                     {% csrf_token %}
 
                     <div class="form-group">
@@ -46,7 +46,7 @@
 
                     <a href="{% url 'crearcuenta' %}">No tienes cuenta?</a> Regístrate<br>
                     <a href="{% url 'recuperar' %}">Contraseña olvidada</a>
-                    <a href="{% url 'anadirp' %}">anadir</a>
+                    
                     <p class="warnings" id="warnings"></p>
 
 

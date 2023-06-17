@@ -13,14 +13,8 @@
                 <div class="col-md-3 col-sm-4"></div>
                 <div class="col-md-6 col-sm-4">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="cambiocontr.html"
-                                role="tab" aria-controls="home" aria-selected="true">Actualizar Contraseña</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="listado.html"
-                                role="tab" aria-controls="home" aria-selected="true">Editar productos y precios</a>
-                        </li>
+                        
+                        
                     </ul>
                 </div>
                 <div class="col-md-3 col-sm-4"></div>
@@ -35,14 +29,16 @@
                 <td>
                     <div class="col-md-12 col-sm-12">
                         <br></br>
-                        
+                        <h2>Tu Perfil</h2>
                         <br></br>
                         <h5>Nombre de admin: Steve austin</h5>
-                        <h5>Email: SteveAustin6@masimple.com</h5>
+                        <h5>Correo: </h5>
                         <h5>Teléfono: +56 9 37269582</h5>
                         <h5>Código admin: 18629</h5>
                         <br></br>
-                        <a href="EditarPerfil.html"><button class="boton-add">Editar</button> </a>
+                        
+                        <a href="{% url 'EditarPerfil' %}"><button class="boton-add">Editar</button> </a> <a href="{% url 'listado' %}"><button class="boton-add">Editar productos</button> </a>
+                        <a href="{% url 'cambiocontr' %}"> <button class="boton-add">Cambiar contraseña</button> </a>
                         <br></br>   
                     </div>
                 </td>
