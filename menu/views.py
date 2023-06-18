@@ -167,6 +167,8 @@ def formUsuario(request):
 def eliminarProducto(request, id):
     producto = Producto.objects.get(idProducto = id)
     producto.delete()
+
+    messages.success(request, 'El producto a sido eliminado')
     return redirect('listado')
 
 def modificarProducto(request):
@@ -189,10 +191,11 @@ def modificarProducto(request):
     
     registroCategoria = Categoria.objects.get(idCategoria = categoriaM)
     producto.categoria = registroCategoria
-
+    messages.success(request, 'El producto a sido modificado')
     producto.save()
+   
     return redirect('listado')
-
+    
 
 
 def iniciosesion (request):
