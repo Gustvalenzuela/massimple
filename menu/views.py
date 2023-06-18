@@ -219,7 +219,7 @@ def iniciosesion (request):
     user = authenticate(username=usuario1, password=contrasenia1)
     
     if user is not None:
-        login(request)
+        login(request, user)
         if (usuario2.rol.idRol == 2 ):
             return redirect ('perfiladmin')
         else:
