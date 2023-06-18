@@ -13,10 +13,7 @@
                 <div class="col-md-3 col-sm-4"></div>
                 <div class="col-md-6 col-sm-4">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="cambiocontr.html"
-                                role="tab" aria-controls="home" aria-selected="true">Actualizar Contraseña</a>
-                        </li>
+                        
                        
                     </ul>
                 </div>
@@ -32,14 +29,15 @@
                 <td>
                     <div class="col-md-12 col-sm-12">
                         <br></br>
-                       
+                        <h2>Tú Perfil</h2>
                         <br></br>
                         <h5>Nombre: Pepito</h5>
                         <h5>Correo: Usuario@gmail.com</h5>
                         <h5>Teléfono: +56 9 33578964</h5>
                         <h5>Direccion de usuario: Huerfanos</h5>
                         <br></br>
-                        <a href="EditarPerfil.html"><button class="boton-add">Editar</button> </a>
+                        <a href="{% url 'EditarPerfil' %}"><button class="btn btn-primary">Editar</button> </a>
+                        <a href="{% url 'cambiocontr' %}"> <button class="btn btn-primary">Cambiar contraseña</button> </a>
                         <br></br>   
                     </div>
                 </td>
