@@ -23,7 +23,9 @@ def plantillaDetalle(request):
 
 
 def detergentes(request):
-    return render(request,'menu/detergentes.html')
+  
+        return render(request,'menu/detergentes.html')
+    
 
 def productos(request):
     return render(request, 'menu/productos.html')
@@ -33,7 +35,6 @@ def proteccion(request):
 
 def login(request):
     logout(request)
-    
 
     return render(request, 'menu/login.html', )
     
@@ -52,10 +53,6 @@ def crearcuenta(request):
     contexto = {
         "preguntas": listaPreguntas
     }
-
-
-    
-
     return render(request, 'menu/crearcuenta.html', contexto)
 
 def EditarPerfil(request):
@@ -75,6 +72,7 @@ def listado(request):
 def Otros(request):
     return render(request, 'menu/Otros.html')
 
+
 def perfiladmin(request):
     lista = Usuario.objects.all()
     contexto = {
@@ -82,9 +80,13 @@ def perfiladmin(request):
     }
     return render(request, 'menu/perfiladmin.html', contexto)
 
-def perfilusuario(request):
+def perfilusuario(request, id):
+    lista = Usuario.objects.get( idUsuario = id)
+    contexto = {
+        "usuarios": lista
+    }
     
-    return render(request, 'menu/perfilusuario.html')
+    return render(request, 'menu/perfilusuario.html', contexto)
 
 def recuperar(request):
     return render(request, 'menu/recuperar.html')
@@ -141,7 +143,7 @@ def formProducto(request):
     vRegistroCategoria = Categoria.objects.get(idCategoria = vCategoria)
     Producto.objects.create( nombreProducto = vNombre, descripcion = vDescripcion, marca = vMarca, stock = vStock, precio = vPrecio, fotoProducto = vFoto, categoria = vRegistroCategoria)
 
-    
+    messages.success(request, 'Producto añadido!')
     return redirect('anadirp')
 
 def formUsuario(request):
@@ -217,14 +219,22 @@ def iniciosesion (request):
     
     usuario2 = Usuario.objects.get(correoUsuario=usuario1, claveUsuario=contrasenia1)
     user = authenticate(username=usuario1, password=contrasenia1)
-    
+    print(user)
     if user is not None:
-        login(request, user)
-        if (usuario2.rol.idRol == 2 ):
+        login(request) 
+        
+        if (usuario2.rol.idRol == 2) :
+            
             return redirect ('perfiladmin')
+        
+        if (usuario2.rol.idRol == 1):
+            login(request)
+            return redirect('perfilusuario')
+        
         else:
             contexto = {"usuario": usuario2}
             return render(request, 'menu/perfilusuario.html', contexto)
+        
         
 
 def cerrarSesion(request):

@@ -31,13 +31,21 @@
                         <br></br>
                         <h2>Tú Perfil</h2>
                         <br></br>
-                        <h5>Nombre: Pepito</h5>
-                        <h5>Correo: Usuario@gmail.com</h5>
-                        <h5>Teléfono: +56 9 33578964</h5>
-                        <h5>Direccion de usuario: Huerfanos</h5>
+                        <h5>Nombre: {{ usuarios.nombreUsuario }}</h5>
+                        <h5>Correo: {{ usuarios.correoUsuario }}</h5>
+                        <h5>Teléfono: {{ usuarios.telefonoUsuario }}</h5>
+                        
                         <br></br>
                         <a href="{% url 'EditarPerfil' %}"><button class="btn btn-primary">Editar</button> </a>
                         <a href="{% url 'cambiocontr' %}"> <button class="btn btn-primary">Cambiar contraseña</button> </a>
+
+                        {% if user.is_authenticated %}
+
+                        <a href="{% url 'login' %}"><button class="btn btn-primary">Cerrar sesión</button> </a>
+                        {% else %}
+                        <a href="{% url 'login' %}"><button class="btn btn-primary">Cerrar sesión</button> </a>
+                        
+                        {% endif %}
                         <br></br>   
                     </div>
                 </td>

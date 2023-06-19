@@ -55,20 +55,21 @@
                                
                                 <a href="{% url 'eliminarProducto' p.idProducto %}" class="btn btn-danger">Eliminar</a>
 
-                                {% if messages %}
-                                <ul class="messages">
-                                    {% for message in messages %}
-                                    <li class="{{ message.tags }}">{{ message }}</li>
-                                    {% endfor %}
-
-                                </ul>
-                                {% endif %}
+                                
                             </td>
                         </tr>
                        
 
                     </tbody>
                     {% endfor %}
+                    {% if messages %}
+                        <ul class="messages">
+                        {% for message in messages %}
+                        <li class="{{ message.tags }}">{{ message }}</li>
+                        {% endfor %}
+
+                        </ul>
+                        {% endif %}
                 </table>
 
                 <a href="{% url 'anadirp' %}" class="btn btn-primary">Agregar producto</a><br>

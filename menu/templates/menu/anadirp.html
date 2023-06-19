@@ -53,13 +53,20 @@
 
                         </select>
                     </div>
-
+               
 
                     
                     <button class="btn btn-primary mt-2">Añadir</button>
 
                      <p class="warnings" id="warnings"></p>
+                         {% if messages %}
+                        <ul class="messages">
+                        {% for message in messages %}
+                        <li class="{{ message.tags }}">{{ message }}</li>
+                        {% endfor %}
 
+                        </ul>
+                        {% endif %}
                    
                 </form>
 
