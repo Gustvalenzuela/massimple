@@ -1,0 +1,55 @@
+{% extends 'menu/plantillaDetalle.html' %}
+
+{%load static%}
+
+{% block titulo %}
+<title>Escobillón</title>
+{% endblock titulo %}
+
+{% block cuerpo %}
+<div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="detail">
+                    <img class="imgProduc" src="{% static 'menu/img/escoba.png' %}" alt="Sin imagen">
+                    <br><br>
+
+                    <h4> Escobillón </h4><br>
+                    <p>Escobillón básico multiuso, color azul</p>
+                    <br>
+                    <h4>$1.690</h4>
+                    <br>
+                    
+                    <label for="cantidad">Cantidad:</label>
+                    <input type="number" id="cantidad" name="cantidad" min="1" max="25" required><br><br>
+                    
+                    <br>
+
+
+                    <button class="boton-add">Agregar al carrito</button>
+                    <br>
+                    <br>
+
+
+
+                </div>
+
+            </div>
+            <div class="col-md-2"></div>
+
+        </div>
+
+
+
+
+
+    </div>
+
+
+{% endblock cuerpo %}
+    
+
+
+

@@ -1,0 +1,116 @@
+{% extends 'menu/plantillaDetalle.html' %}
+{% load static %}
+{% block titulo %}
+
+    <title>Crear Cuenta</title>
+{% endblock titulo %}
+
+
+{% block cuerpo %}
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 d-sm-12"></div>
+            <div class="col-md-6 col-md-12">
+                <h2 style="margin-top: 30px; text-align: center; color: rgb(0, 0, 0);">Crear cuenta
+                </h2>
+            </div>
+            <div class="col-md-3 d-sm-12"></div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 d-sm-12"></div>
+            <div class="col-md-4 col-sm-12">
+                <form action="{% url 'formUsuario' %}" method="POST" id="form1">
+                    {% csrf_token %}
+
+                    <div class="form-group">
+                        <label>Rut: </label>
+                        <input class="form-control" name="rut" placeholder="Escriba su rut" type="number" id="rut">
+                    </div>
+                    <div class="form-group">
+                        <label>Dígito Verificador: </label>
+                        <input class="form-control" name="dv" placeholder="Ingrese su dígito verificador" value="" id="dv">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Nombre: </label>
+                        <input class="form-control" name="nombre" placeholder="Escriba su nombre" value="" id="name">
+                    </div>
+                    <div class="form-group">
+                        <label>Apellido: </label>
+                        <input class="form-control" name="apellido" placeholder="Escriba su apellido" value="" id="apellido">
+                    </div>
+                    <div class="form-group">
+                        <label>Telefono: </label>
+                        <input class="form-control" name="telefono" placeholder="Escriba su telefono" value="" id="telefono">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Correo: </label>
+                        <input class="form-control" name="email" placeholder="Escriba su correo" value="" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label>Fecha: </label>
+                        <input class="form-control" type="date"name="fecha" placeholder="Escriba su correo" value="" id="fecha">
+                    </div>
+
+
+
+                    <div class="grupo">
+                        <label for="">Contraseña:</label>
+                        <input class="form-control" type="password" name="password" id="password"
+                            placeholder="Escriba su contraseña"><span class="barra" required></span>
+
+                    </div>
+                    <div class="grupo">
+                        <label for="">Reingrese la contraseña: </label>
+                        <input class="form-control" type="password" name="password" id="password"
+                            placeholder="Reingrese su contraseña"><span class="barra" required></span>
+
+                    </div>
+                    <div class="grupo">
+                        <label>Preguntas de seguridad</label>
+                       <select class="form-control" name="pregunta" id="pregunta">
+                           <option value="Nop">Seleccione una pregunta</option>
+                           {% for x in preguntas %}
+                           <option value="{{ x.idPregunta }}">{{ x.nombrePregunta }}</option>
+                           {% endfor %}
+                       </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Respuesta: </label>
+                        <input class="form-control" name="respuesta" placeholder="Escriba su respuesta" value="" id="respuesta">
+                    </div>
+
+
+                    
+
+
+                    <button type="submit">Enviar</button>
+                    <p class="warnings" id="warnings"></p>
+
+                </form>
+
+            </div>
+            <div class="col-md-4 d-sm-12"></div>
+        </div>
+    </div>
+    </div>
+    <script src="{% static 'menu/js/query.js' %}"></script>
+
+
+{% endblock cuerpo %}
+
+
+  
+
+
+    
+
+
+
+  

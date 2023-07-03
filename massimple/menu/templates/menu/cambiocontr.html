@@ -1,0 +1,45 @@
+{% extends 'menu/plantillaDetalle.html' %}
+{% load static%}
+{% block titulo %}
+ <title>Cambiar Contraseña</title>
+
+{% endblock titulo %}
+   
+{% block cuerpo %}
+ <main role="main" class="container-fluid">
+        <div class="row">
+            <div id="login" class="col-lg-4 offset-lg-4 col-md-6 offset-md-3
+                col-12">
+                <h2 class="text-center">Cambio de contraseña</h2>
+
+                <form action="" method="POST" id="form4">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="current-password">Contraseña actual: </label>
+                        <input class="form-control input-lg" placeholder="Ingresa tu contraseña actual" type="password" id="current-password" name="current_password">
+                    </div>
+                    <div class="form-group">
+                        <label for="new-password">Nueva contraseña: </label>
+                        <input class="form-control input-lg" placeholder="Ingresa la nueva contraseña" type="password" id="new-password" name="new_password">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm-password">Repetir nueva contraseña: </label>
+                        <input class="form-control input-lg" placeholder="Repite la nueva contraseña" type="password" id="confirm-password" name="confirm_password">
+                    </div>
+
+                    
+                    <button class="btn btn-primary mt-2">Cambiar contraseña</button>
+
+                    <small class="text-muted mt-5 mb-1 d-block">Volver al <a href="{% url 'inicio' %}"> inicio</a></small>
+
+                    <p class="warnings" id="warnings"></p>
+                </form>
+
+                <div id="password-error"></div>
+
+
+        <script src="{% static 'menu/js/query.js' %}"></script>
+{% endblock cuerpo %}
+
+

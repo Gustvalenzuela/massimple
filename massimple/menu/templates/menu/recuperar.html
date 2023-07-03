@@ -1,0 +1,46 @@
+{% extends 'menu/plantillaDetalle.html' %}
+{%load static%}
+{% block titulo %}
+  <title>Recuperar</title>
+
+{% endblock titulo %}
+
+{% block cuerpo %}
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12" style="text-align: center;">
+                <p>
+                <h2>Recuperar contraseña</h2>
+                </p>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-4 col-sm-12"></div>
+            <div class="col-md-4 col-sm-12" style="text-align: center;">
+                <p>
+                </p>
+                <form action="" method="POST" id="form5">
+                    {% csrf_token %}
+
+                    <div class="form-group">
+                        <label>Ingresa tu correo electronico para reestablecer la contraseña </label>
+                        <input class="form-control" name="" placeholder="Escriba su correo electronico" value="" id="email">
+                    </div> <br>
+
+                
+
+                    <button type="submit">Enviar</button>
+                    <p class="warnings" id="warnings"></p>
+
+                </form>
+            </div>
+            <div class="col-md-4 col-sm-12"></div>
+
+<script src="{% static 'menu/js/query.js' %}"></script>
+{% endblock cuerpo %}
+  
+    
+
+
