@@ -51,14 +51,9 @@
                         <a class="nav-link" href="javascript:void(0)">Link</a>
                     </li>-->
                 </ul>
-                <form class="d-flex tamanobuscar">
-                    <input class="form-control me-2 " type="text" placeholder="Buscar...">
-                    <button class="btn btn-primary" type="button">Buscar</button>
-
-                </form>
 
                 <div class="d-flex carrito_compra_logo">
-                    <a href="{% url 'login' %}"><img class="tamanocarrito" src="{%static 'menu/img/logoperfil3.png '%}"
+                    <a href="{% url 'perfilusuario' user.rutUsuario %}"><img class="tamanocarrito" src="{%static 'menu/img/logoperfil3.png '%}"
                             alt="Sin imagen"></a>
                 </div>
 
@@ -89,24 +84,26 @@
         <div class="row">
             <div class="col-md-4 d-sm-12"></div>
             <div class="col-md-4 col-sm-12">
-                <form action="" method="POST" id="form3">
-
+                <form action="{% url 'formEditarPerfil' %}" method="POST" id="form3">
+                    {% csrf_token %}
                     <div class="form-group">
                         <label>Nombre: </label>
-                        <input class="form-control" name="nombre" placeholder="Escriba su  nuevo nombre" value=""
+                        <input class="form-control" name="nombre" placeholder="Escriba su nuevo nombre" 
+                        value="{{user.nombre}}"
                             id="name">
                     </div>
 
                     <div class="form-group">
                         <label>Correo: </label>
-                        <input class="form-control" type="" name="nombre" placeholder="Escriba su nuevo correo" value=""
-                            id="email ">
+                        <input class="form-control" type="email" name="correo" placeholder="Escriba su nuevo correo" 
+                            value="{{user.correoUsuario}}"
+                            id="correo">
                     </div>
 
 
                     <div>
                         <label>Fecha de nacimiento: </label>
-                        <input class="form-control" type="date" name="" id="fecha">
+                        <input class="form-control" type="date" name="fecha" id="fecha">
                     </div>
                     <br>
 
@@ -114,8 +111,15 @@
                     <button type="submit">Actualizar</button>
                     <p class="warnings" id="warnings"></p>
 
-                </form>
 
+                </form>
+                {% if messages %}
+                <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+                </ul>
+                {% endif %}
             </div>
             <div class="col-md-4 d-sm-12"></div>
         </div>

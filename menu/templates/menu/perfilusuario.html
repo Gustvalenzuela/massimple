@@ -31,12 +31,12 @@
                         <br></br>
                         <h2>Tú Perfil</h2>
                         <br></br>
-                        <h5>Nombre: {{ usuarios.nombreUsuario }}</h5>
+                        <h5>Nombre: {{ usuarios.nombre }}</h5>
                         <h5>Correo: {{ usuarios.correoUsuario }}</h5>
                         <h5>Teléfono: {{ usuarios.telefonoUsuario }}</h5>
                         
                         <br></br>
-                        <a href="{% url 'EditarPerfil' %}"><button class="btn btn-primary">Editar</button> </a>
+                        <a href="{% url 'EditarPerfil' usuarios.rutUsuario %}"><button class="btn btn-primary">Editar</button> </a>
                         <a href="{% url 'cambiocontr' %}"> <button class="btn btn-primary">Cambiar contraseña</button> </a>
 
                         {% if user.is_authenticated %}

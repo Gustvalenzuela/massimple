@@ -12,19 +12,6 @@ body {
     background-color: #efebe4;
 }
 
-input[type=text] {
-    width: 100%;
-
-    box-sizing: border-box;
-    border: 2px solid #918686;
-    border-radius: 6px;
-    font-size: 16px;
-    background-color: white;
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Vector_search_icon.svg/20px-Vector_search_icon.svg.png');
-    background-position: 10px 10px;
-    background-repeat: no-repeat;
-    padding: 7px 20px 7px 40px;
-}
 
 .tamMedium {
     width: 100%;

@@ -28,7 +28,11 @@
 
                     <div class="form-group">
                         <label>Rut: </label>
-                        <input class="form-control" name="rut" placeholder="Escriba su rut" value="" id="rut">
+                        <input class="form-control" name="rut" placeholder="Escriba su rut" type="number" id="rut">
+                    </div>
+                    <div class="form-group">
+                        <label>Dígito Verificador: </label>
+                        <input class="form-control" name="dv" placeholder="Ingrese su dígito verificador" value="" id="dv">
                     </div>
 
                     <div class="form-group">
@@ -68,8 +72,9 @@
 
                     </div>
                     <div class="grupo">
-                        <label>Preguntas</label>
+                        <label>Preguntas de seguridad</label>
                        <select class="form-control" name="pregunta" id="pregunta">
+                           <option value="Nop">Seleccione una pregunta</option>
                            {% for x in preguntas %}
                            <option value="{{ x.idPregunta }}">{{ x.nombrePregunta }}</option>
                            {% endfor %}
