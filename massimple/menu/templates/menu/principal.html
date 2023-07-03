@@ -1,0 +1,83 @@
+{% extends 'menu/plantilla.html' %}
+
+
+{% load static %}
+
+{% block titulo %}
+<title>Principal</title>
+{% endblock titulo %}
+
+
+
+{% block categoria %}
+<h5>La limpieza de tu vida</h5>
+{% endblock categoria %}
+
+{% block cuerpo %}
+<div class="row" style="background-color: #E5E1D5;">
+    <div class="col-md-4 col-sm-12" style="text-align: center;">
+        <img class="tam" src="{% static 'menu/img/balde2.png' %}" alt="Sin imagen">
+        <br>
+        <br>
+
+        <a class="cate" href="{% url 'productos' %}" target="_self">
+            <h6>Productos de limpieza</h6>
+        </a>
+
+    </div>
+    <div class="col-md-4 col-sm-12" style="text-align: center;">
+        <img class="tam" src="{% static 'menu/img/quimicos.png'%}" alt="Sin imagen">
+        <br>
+        <br>
+        <a class="cate" href="{% url 'detergentes' %}">
+            <h6> Detergentes</h6>
+        </a>
+    </div>
+    <div class="col-md-4 col-sm-12" style="text-align: center;">
+        <img class="tamMedium" src="{% static 'menu/img/productos-de-aseo.jpg'%}" alt="Sin imagen">
+        <br>
+        <br>
+        <a class="cate" href="{% url 'proteccion' %}" target="_self">
+            <h6> Protección</h6>
+        </a>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br><br>
+<div class="row">
+    <div class="col-md-3 col-sm-12"></div>
+    <div class="col-md-6 col-sm-12" style="text-align: center;">
+        <img class="tamanioImgPrinci" src="{%static 'menu/img/compra_online.png '%}" alt="Sin imagen">
+    </div>
+    <div class="col-md-3 col-sm-12" style="text-align: center" ;> </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+</div>
+
+{% endblock cuerpo %}
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+</body>
+
+</html>

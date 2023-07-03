@@ -1,0 +1,72 @@
+{% extends 'menu/plantillaDetalle.html' %}
+{% load static%}
+
+{% block titulo %}
+ <title>Carrito</title>
+{% endblock titulo %}
+
+{% block cuerpo %}
+
+    <div class="container-fluid">
+        <div class="row tabla" style="background-color: #E5E1D5;">
+            <div class="col-md-12 col-sm-12" style="text-align: center;">
+                <p>
+                <h5>Tu Carrito de Compras</h5>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="cart">
+                    <h2>Mi carrito</h2>
+                    <ul id="cart-items">
+                        <!-- Aquí se añadirán los elementos del carrito -->
+                    </ul>
+                    <p id="total">Total: $0</p>
+                    <button id="checkout-btn">Realizar pago</button>
+
+                    <br>
+                    <br>
+
+                </div>
+        
+                <div class="products">
+                    <h2>Productos disponibles</h2>
+                    <ul id="product-list">
+                        <li>
+                            <span>Producto 1</span>
+                            <span>$10</span>
+                            <button class="add-to-cart">Agregar al carrito</button>
+                        </li>
+                        <li>
+                            <span>Producto 2</span>
+                            <span>$20</span>
+                            <button class="add-to-cart">Agregar al carrito</button>
+                        </li>
+                        <li>
+                            <span>Producto 3</span>
+                            <span>$30</span>
+                            <button class="add-to-cart">Agregar al carrito</button>
+                        </li>
+                    </ul>
+                </div>
+        
+
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+
+       
+
+
+        
+    </div>
+{% endblock cuerpo %}
+   
+
+    
+
+

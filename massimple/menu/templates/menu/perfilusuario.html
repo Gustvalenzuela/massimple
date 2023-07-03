@@ -1,0 +1,63 @@
+{% extends 'menu/plantillaDetalle.html' %}
+{% load static %}
+
+{% block titulo %}
+<title>Perfil De Usuario</title>
+{% endblock titulo %}
+    
+{% block cuerpo %}
+
+<div class="container-fluid" style="text-align: center;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-4"></div>
+                <div class="col-md-6 col-sm-4">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        
+                       
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-4"></div>
+            </div>
+        </div>
+
+
+        
+        <TABLE BORDER=3 WIDTH="41%" HEIGHT="80%" style="margin: 0 auto;">
+            <tr>
+                <td></td>
+                <td>
+                    <div class="col-md-12 col-sm-12">
+                        <br></br>
+                        <h2>Tú Perfil</h2>
+                        <br></br>
+                        <h5>Nombre: {{ usuarios.nombre }}</h5>
+                        <h5>Correo: {{ usuarios.correoUsuario }}</h5>
+                        <h5>Teléfono: {{ usuarios.telefonoUsuario }}</h5>
+                        
+                        <br></br>
+                        <a href="{% url 'EditarPerfil' usuarios.rutUsuario %}"><button class="btn btn-primary">Editar</button> </a>
+                        <a href="{% url 'cambiocontr' %}"> <button class="btn btn-primary">Cambiar contraseña</button> </a>
+
+                        {% if user.is_authenticated %}
+
+                        <a href="{% url 'login' %}"><button class="btn btn-primary">Cerrar sesión</button> </a>
+                        {% else %}
+                        <a href="{% url 'login' %}"><button class="btn btn-primary">Cerrar sesión</button> </a>
+                        
+                        {% endif %}
+                        <br></br>   
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+        </TABLE>
+
+        <div class="col-md-3 col-sm-12">
+            <br></br>
+        </div>
+{% endblock cuerpo %}
+  
+
+ 
+    

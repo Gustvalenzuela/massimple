@@ -1,0 +1,111 @@
+{% extends 'menu/plantillaDetalle.html' %}
+{%load static%}
+
+{% block titulo %}
+    <title>Listado</title>
+{% endblock titulo %}
+
+{% block cuerpo %}
+ <div class="container-fluid">
+
+        <div class="row" style="background-color: #E5E1D5;">
+            <div class="col-md-12 col-sm-12" style="text-align: center;">
+                <p>
+                <h5>Listado de productos</h5>
+                </p>
+            </div>
+
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 col-sm-12">
+
+                <table border="1" class="lindatabla">
+                    <thead>
+                        <tr>
+                            <th>Id producto</th>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Marca</th>
+                            <th>Stock</th>
+                            <th>Precio</th>
+                            <th>Foto</th>
+                            <th>Categoría</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    {% for p in productos %}
+                    <tbody id="productos">
+                        <tr>
+                            <td>{{ p.idProducto }}</td>
+                            <td>{{ p.nombreProducto }}</td>
+                            <td>{{ p.descripcion }}</td>
+                            <td>{{ p.marca }}</td>
+                            <td>{{ p.stock }}</td>
+                            <td>{{ p.precio }}</td>
+                            <td>
+                                <img class="tam" src="{{ p.fotoProducto.url  }}" alt="No foto">
+                            </td>
+                            <td>{{ p.categoria.nombreCategoria }}</td>
+                            <td>
+                                <a href="{% url 'modificarP' p.idProducto %}" class="btn btn-primary">Modificar</a><br>
+                               
+                                <a href="{% url 'eliminarProducto' p.idProducto %}" class="btn btn-danger">Eliminar</a>
+
+                                
+                            </td>
+                        </tr>
+                       
+
+                    </tbody>
+                    {% endfor %}
+                    {% if messages %}
+                        <ul class="messages">
+                        {% for message in messages %}
+                        <li class="{{ message.tags }}">{{ message }}</li>
+                        {% endfor %}
+
+                        </ul>
+                        {% endif %}
+                </table>
+
+                <a href="{% url 'anadirp' %}" class="btn btn-primary">Agregar producto</a><br>
+            </div>
+            <div class="col-md-2"></div>
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock cuerpo %}
+
+
+
+
+   
+
+
+
+

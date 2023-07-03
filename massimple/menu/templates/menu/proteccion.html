@@ -1,0 +1,100 @@
+{% extends 'menu/plantilla.html' %}
+
+
+    {% load static%}
+{% block titulo %}
+    <title>Proteccion</title>
+{% endblock titulo %}
+
+{% block categoria %}
+  <h5>Protección</h5>
+{% endblock categoria %}   
+
+{% block cuerpo %} 
+  <div class="row">
+            <div class="col-md-3 col-sm-12">
+                <div class="container-items">
+                    <div class="item">
+
+                        <img class="tam" src="{%static 'menu/img/guantes.jpg' %}" alt="Sin imagen">
+                        <h4>Guantes de goma</h4>
+                        <p class="price"> $2.500</p>
+                        <a href="{% url 'detalleGuan' %}"><button class="boton-add">Ver más </button> </a>
+
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+            <div class="col-md-3 col-sm-12">
+                <div class="container-items">
+                    <div class="item">
+
+                        <img class="tam" src="{%static 'menu/img/mascarillas.jpg' %}" alt="Sin imagen">
+                        <h5>Mascarilla facial </h5>
+                        <p class="price"> $1.000</p>
+                        <a href="detalleMasca.html"><button class="boton-add">Ver más </button> </a>
+
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="col-md-3 col-sm-12">
+                <div class="container-items">
+                    <div class="item">
+
+                        <img class="tam" src="{%static 'menu/img/cubrecalzado2.jpg' %}" alt="Sin imagen">
+                        <h5>Cubrecalzado</h5>
+                        <p class="price"> $2.000</p>
+                        <a href="detalleCubre.html"><button class="boton-add">Ver más </button> </a>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="col-md-3 col-sm-12">
+                <div class="container-items">
+                    <div class="item">
+
+                        <img class="tam" src="{%static 'menu/img/overol.jpg' %}" alt="Sin imagen">
+                        <h5>Overol desechable</h5>
+                        <p class="price"> $4.000</p>
+                        <a href="detalleOverol.html"><button class="boton-add">Ver más </button> </a>
+
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+            <br><br>
+
+        </div>
+
+
+{% endblock cuerpo %} 
+
+      
+
+
+
+
+
+
+
+
+

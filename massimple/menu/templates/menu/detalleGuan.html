@@ -1,0 +1,54 @@
+{% extends 'menu/plantillaDetalle.html' %}
+{%load static%}
+
+{% block titulo %}
+ <title>Guantes Amarillos</title>
+{% endblock titulo %}
+
+{% block cuerpo %}
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="detail">
+                    <img class="imgProduc" src="{% static 'menu/img/guantes.jpg' %}" alt="Sin imagen">
+                    <br><br>
+
+                    <h4> Guantes de goma</h4><br>
+                    <p>Un par de guantes de goma amarillos</p>
+                    <br>
+                    <h4>$2.500</h4>
+                    <br>
+                    
+                    <label for="cantidad">Cantidad:</label>
+                    <input type="number" id="cantidad" name="cantidad" min="1" max="25" required><br><br>
+                    <br>
+                    
+
+
+                    <button class="boton-add">Agregar al carrito</button>
+                    <br>
+                    <br>
+
+
+
+                </div>
+
+            </div>
+            <div class="col-md-2"></div>
+
+        </div>
+
+
+
+    </div>
+
+{% endblock cuerpo %}
+
+   
+
+    
+
+
